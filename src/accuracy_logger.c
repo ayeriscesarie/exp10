@@ -1,0 +1,168 @@
+#include "accuracy_logger.h"
+
+#include <stdio.h>
+#include <math.h>
+#include <float.h>
+
+typedef struct {
+    float left;
+    float right;
+    const char *name;
+} range_t;
+
+static const range_t ranges[] = {
+    {-50.0f, -35.0f, "dataset 0.1.0"},
+    {-35.0f, -25.0f, "dataset 0.1.1"},
+
+    {-32.0f, -16.0f, "dataset 0.1.2"},
+    {-16.0f,  -8.0f, "dataset 0.1.3"},
+    { -8.0f,  -4.0f, "dataset 0.1.4"},
+    { -4.0f,  -2.0f, "dataset 0.1.5"},
+    { -2.0f,  -1.0f, "dataset 0.1.6"},
+
+    { -1.0f,  -0.5f, "dataset 0.1.7"},
+    { -0.5f,  -0.25f, "dataset 0.1.8"},
+    { -0.25f, -0.125f, "dataset 0.1.9"},
+
+    { -0.125f, 0.0f, "dataset 0.1.10"},
+    {  0.0f,   0.125f, "dataset 0.1.11"},
+
+    { 0.125f, 0.25f, "dataset 0.1.12"},
+    { 0.25f,  0.5f,  "dataset 0.1.13"},
+    { 0.5f,   1.0f,  "dataset 0.1.14"},
+
+    { 1.0f,   2.0f,  "dataset 0.1.15"},
+    { 2.0f,   4.0f,  "dataset 0.1.16"},
+    { 4.0f,   8.0f,  "dataset 0.1.17"},
+    { 8.0f,   16.0f, "dataset 0.1.18"},
+    {16.0f,   32.0f, "dataset 0.1.19"},
+
+    {32.0f,   40.0f, "dataset 0.1.20"}
+};
+
+static void test_one_range(
+    FILE *file,
+    const char *version_name,
+    scalar_fn_t fn,
+    range_t r,
+    int samples,
+    double max_allowed_ulp,
+    int range_index,
+    int *fail_count
+) {
+    double max_abs_ulp = 0.0;
+    double sum_abs_ulp = 0.0;
+
+    double min_signed_ulp = DBL_MAX;
+    double max_signed_ulp = -DBL_MAX;
+
+    float worst_x = r.left;
+    float min_x = r.left;
+    float max_x = r.left;
+
+    int valid = 0;
+
+    for (int i = 0; i < samples; ++i) {
+        float t = (float)i / (float)(samples - 1);
+        float x = r.left + (r.right - r.left) * t;
+
+        float my = fn(x);
+        double ref = powl(10.0L, (long double)x);
+
+        if (!isfinite(ref) || !isfinite(my)) {
+            continue;
+        }
+
+        double ulp = ulp_error_float(ref, my);
+        double abs_ulp = fabs(ulp);
+
+        if (abs_ulp > max_abs_ulp) {
+            max_abs_ulp = abs_ulp;
+            worst_x = x;
+        }
+
+        if (ulp < min_signed_ulp) {
+            min_signed_ulp = ulp;
+            min_x = x;
+        }
+
+        if (ulp > max_signed_ulp) {
+            max_signed_ulp = ulp;
+            max_x = x;
+        }
+
+        sum_abs_ulp += abs_ulp;
+        valid++;
+    }
+
+    double avg_abs_ulp = valid > 0 ? sum_abs_ulp / valid : 0.0;
+
+    const char *status = max_abs_ulp <= max_allowed_ulp ? "PASS" : "FAIL";
+
+    if (status[0] == 'F') {
+        (*fail_count)++;
+    }
+
+    fprintf(
+        file,
+        "%s: %-4s #  maxULP %+.6e  avgULP %+.6e  "
+        "minULP %+.6e at x=%+.6e  maxULP_signed %+.6e at x=%+.6e  "
+        "[%+.6e .. %+.6e] : %s\n",
+        version_name,
+        status,
+        max_abs_ulp,
+        avg_abs_ulp,
+        min_signed_ulp,
+        min_x,
+        max_signed_ulp,
+        max_x,
+        r.left,
+        r.right,
+        r.name
+    );
+}
+
+void write_accuracy_report_for_version(
+    const char *filename,
+    const char *version_name,
+    scalar_fn_t fn,
+    int samples_per_range,
+    double max_allowed_ulp
+) {
+    FILE *file = fopen(filename, "a");
+
+    if (file == NULL) {
+        printf("Cannot open accuracy report file: %s\n", filename);
+        return;
+    }
+
+    int fail_count = 0;
+    int range_count = (int)(sizeof(ranges) / sizeof(ranges[0]));
+
+    fprintf(file, "\n");
+    fprintf(file, "===== Accuracy report for %s =====\n", version_name);
+
+    for (int i = 0; i < range_count; ++i) {
+        test_one_range(
+            file,
+            version_name,
+            fn,
+            ranges[i],
+            samples_per_range,
+            max_allowed_ulp,
+            i,
+            &fail_count
+        );
+    }
+
+    fprintf(
+        file,
+        "%s: %s ** SUMMARY ** failed ranges: %d / %d\n",
+        version_name,
+        fail_count == 0 ? "PASS" : "FAIL",
+        fail_count,
+        range_count
+    );
+
+    fclose(file);
+}

@@ -4,7 +4,7 @@
 #include "common.h"
 #include "exp10_versions.h"
 #include "bench.h"
-
+#include "accuracy_logger.h"
 
 int main(void) {
     init_table();
@@ -25,11 +25,29 @@ int main(void) {
 
     const int row_count = (int)(sizeof(rows) / sizeof(rows[0]));
 
+    remove("accuracy_report.txt");
+
+    for (int i = 0; i < row_count; ++i) {
+        write_accuracy_report_for_version(
+            "accuracy_report.txt",
+            rows[i].version,
+            rows[i].fn,
+            10000,
+            4.0
+        );
+    }
+
     print_header();
     fflush(stdout);
 
     for (int i = 0; i < row_count; ++i) {
-        row_result_t rr = measure_scalar_row(rows[i].fn, ACCURACY_SAMPLES, BENCH_N, REPEATS);
+        row_result_t rr = measure_scalar_row(
+            rows[i].fn,
+            ACCURACY_SAMPLES,
+            BENCH_N,
+            REPEATS
+        );
+
         print_row(rows[i].version, rows[i].optimization, &rr, 1, 0);
         fflush(stdout);
     }
@@ -44,7 +62,9 @@ int main(void) {
     {
         row_result_t rr;
         memset(&rr, 0, sizeof(rr));
+
         rr.skipped = 1;
+
         print_row("V7", "AVX2 vector kernel (not compiled / not supported)", &rr, 0, 1);
         fflush(stdout);
     }
@@ -55,7 +75,7 @@ int main(void) {
     printf("Notes:\n");
     printf("1) scalar rows report latency only\n");
     printf("2) vector row V7 reports throughput only\n");
-    printf("3) accuracy is reported as max/avg absolute ULP on sampled power-of-two intervals\n");
+    printf("3) accuracy report was written to accuracy_report.txt\n");
     printf("\n");
 
     return 0;

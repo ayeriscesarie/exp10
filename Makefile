@@ -6,6 +6,7 @@ LDFLAGS = -lm
 SRC = src/main.c \
       src/common.c \
       src/bench.c \
+      src/accuracy_logger.c \
       src/v0.c \
       src/v1.c \
       src/v2.c \
