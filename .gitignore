@@ -1,0 +1,4 @@
+build/
+*.exe
+accuracy_report.txt
+*.log
