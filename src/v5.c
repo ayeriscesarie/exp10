@@ -7,15 +7,18 @@ float exp10_v5(float x) {
     if (isinf(x)) return x > 0 ? INFINITY : 0.0f;
     if (x > X_MAX_NORMAL) return INFINITY;
     if (x < X_MIN_NORMAL) return 0.0f;
+    double xd = (double)x;
 
-    float y = fmaf(x, LOG2_10_HI, x * LOG2_10_LO);
-    float n = round_shifter(y);
-    float r = fmaf(-n, 1.0f, y);
+    double y = fma(xd, D_LOG2_10_HI, xd * D_LOG2_10_LO);
+    double n = nearbyint(y);
+    double r = fma(-1.0, n, y);
 
-    float poly = fmaf(M5_C5, r, M5_C4);
-    poly = fmaf(poly, r, M5_C3);
-    poly = fmaf(poly, r, M5_C2);
-    poly = fmaf(poly, r, M5_C1);
-    poly = fmaf(poly, r, M5_C0);
-    return pow2i_reconstruct_normal((int32_t)n) * poly;
+    double poly = fma(D_M5_C5, r, D_M5_C4);
+    poly = fma(poly, r, D_M5_C3);
+    poly = fma(poly, r, D_M5_C2);
+    poly = fma(poly, r, D_M5_C1);
+    poly = fma(poly, r, D_M5_C0);
+
+    double result = pow2i_reconstruct_normal_double((int32_t)n) * poly;
+    return (float)result;
 }

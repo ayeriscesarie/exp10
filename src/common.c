@@ -65,6 +65,20 @@ float pow2i_reconstruct_normal(int32_t n) {
     return F32(bits);
 }
 
+double pow2i_reconstruct_normal_double(int32_t n)
+{
+    if (n > 1023) {
+        return INFINITY;
+    }
+
+    if (n < -1022) {
+        return 0.0;
+    }
+
+    uint64_t bits = (uint64_t)(n + 1023) << 52;
+    return F64(bits);
+}
+
 float ref_exp10f(float x) {
     return (float)powl(10.0L, (long double)x);
 }

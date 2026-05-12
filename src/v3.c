@@ -8,16 +8,20 @@ float exp10_v3(float x) {
     if (isinf(x)) return x > 0 ? INFINITY : 0.0f;
     if (x > X_MAX_NORMAL) return INFINITY;
     if (x < X_MIN_NORMAL) return 0.0f;
-    float y = fmaf(x, LOG2_10_HI, x * LOG2_10_LO);
-    float n = roundf(y);
-    float r = fmaf(-n, 1.0f, y);
+    double xd = (double)x;
 
-    float r2 = r * r;
-    float t54 = fmaf(M5_C5, r, M5_C4);
-    float t32 = fmaf(M5_C3, r, M5_C2);
-    float t10 = fmaf(M5_C1, r, M5_C0);
-    float poly = fmaf(t54, r2, t32);
-    poly = fmaf(poly, r2, t10);
+    double y = fma(xd, D_LOG2_10_HI, xd * D_LOG2_10_LO);
+    double n = nearbyint(y);
+    double r = fma(-1.0, n, y);
+    double r2 = r * r;
 
-    return pow2i_reconstruct_normal((int32_t)n) * poly;
+    double t54 = fma(D_M5_C5, r, D_M5_C4);
+    double t32 = fma(D_M5_C3, r, D_M5_C2);
+    double t10 = fma(D_M5_C1, r, D_M5_C0);
+
+    double poly = fma(t54, r2, t32);
+    poly = fma(poly, r2, t10);
+    double result = pow2i_reconstruct_normal_double((int32_t)n) * poly;
+    
+    return (float)result;
 }

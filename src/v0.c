@@ -9,20 +9,24 @@ float exp10_v0(float x) {
     if (x > X_MAX_NORMAL) return INFINITY;
     if (x < X_MIN_NORMAL) return 0.0f;
 
-    float y = x * LOG2_10;
-    float n = roundf(y);
-    float r = fmaf(-n, 1.0f, y);
+double xd = (double)x;
 
-    float poly = fmaf(T10_C10, r, T10_C9);
-    poly = fmaf(poly, r, T10_C8);
-    poly = fmaf(poly, r, T10_C7);
-    poly = fmaf(poly, r, T10_C6);
-    poly = fmaf(poly, r, T10_C5);
-    poly = fmaf(poly, r, T10_C4);
-    poly = fmaf(poly, r, T10_C3);
-    poly = fmaf(poly, r, T10_C2);
-    poly = fmaf(poly, r, T10_C1);
-    poly = fmaf(poly, r, T10_C0);
+double y = xd * D_LOG2_10;
+double n = nearbyint(y);
+double r = fma(-1.0, n, y);
 
-    return pow2i_reconstruct_normal((int32_t)n) * poly;
+double poly = fma(D_T10_C10, r, D_T10_C9);
+poly = fma(poly, r, D_T10_C8);
+poly = fma(poly, r, D_T10_C7);
+poly = fma(poly, r, D_T10_C6);
+poly = fma(poly, r, D_T10_C5);
+poly = fma(poly, r, D_T10_C4);
+poly = fma(poly, r, D_T10_C3);
+poly = fma(poly, r, D_T10_C2);
+poly = fma(poly, r, D_T10_C1);
+poly = fma(poly, r, D_T10_C0);
+
+double result = pow2i_reconstruct_normal_double((int32_t)n) * poly;
+return (float)result;
+
 }
