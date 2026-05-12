@@ -11,7 +11,7 @@ float exp10_v0(float x) {
 
     float y = x * LOG2_10;
     float n = roundf(y);
-    float r = y - n;
+    float r = fmaf(-n, 1.0f, y);
 
     float poly = fmaf(T10_C10, r, T10_C9);
     poly = fmaf(poly, r, T10_C8);

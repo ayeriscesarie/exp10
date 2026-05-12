@@ -8,15 +8,14 @@ float exp10_v5(float x) {
     if (x > X_MAX_NORMAL) return INFINITY;
     if (x < X_MIN_NORMAL) return 0.0f;
 
-    float y = x * LOG2_10_HI + x * LOG2_10_LO;
+    float y = fmaf(x, LOG2_10_HI, x * LOG2_10_LO);
     float n = round_shifter(y);
-    float r = y - n;
+    float r = fmaf(-n, 1.0f, y);
 
-    float poly = M5_C5 * r + M5_C4;
-    poly = poly * r + M5_C3;
-    poly = poly * r + M5_C2;
-    poly = poly * r + M5_C1;
-    poly = poly * r + M5_C0;
-
+    float poly = fmaf(M5_C5, r, M5_C4);
+    poly = fmaf(poly, r, M5_C3);
+    poly = fmaf(poly, r, M5_C2);
+    poly = fmaf(poly, r, M5_C1);
+    poly = fmaf(poly, r, M5_C0);
     return pow2i_reconstruct_normal((int32_t)n) * poly;
 }

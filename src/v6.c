@@ -20,7 +20,7 @@ float exp10_v6(float x) {
         n -= 1;
     }
 
-    float r = y - kf * INV_TABLE_SCALE;
+float r = fmaf(-kf, INV_TABLE_SCALE, y);
 
     float poly = fmaf(S2_C2, r, S2_C1);
     poly = fmaf(poly, r, S2_C0);

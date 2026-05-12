@@ -10,7 +10,7 @@ float exp10_v3(float x) {
     if (x < X_MIN_NORMAL) return 0.0f;
     float y = fmaf(x, LOG2_10_HI, x * LOG2_10_LO);
     float n = roundf(y);
-    float r = y - n;
+    float r = fmaf(-n, 1.0f, y);
 
     float r2 = r * r;
     float t54 = fmaf(M5_C5, r, M5_C4);
