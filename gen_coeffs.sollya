@@ -1,0 +1,36 @@
+prec = 200!;
+display = decimal!;
+points = 25!;
+
+f = exp(x * log(2));
+
+I_main = [-0.5; 0.5];
+I_lut  = [-1/64; 1/64];
+
+p5 = fpminimax(f, 5,
+    [|double,double,double,double,double,double|],
+    I_main);
+
+p6 = fpminimax(f, 6,
+    [|double,double,double,double,double,double,double|],
+    I_main);
+
+p10 = fpminimax(f, 10,
+    [|double,double,double,double,double,double,double,double,double,double,double|],
+    I_main);
+
+p2 = fpminimax(f, 2,
+    [|double,double,double|],
+    I_lut);
+
+print("M5:");
+p5;
+
+print("T6:");
+p6;
+
+print("T10:");
+p10;
+
+print("S2:");
+p2;
