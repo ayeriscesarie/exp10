@@ -21,7 +21,7 @@ float exp10_v3(float x) {
 
     double poly = fma(t54, r2, t32);
     poly = fma(poly, r2, t10);
-    double result = pow2i_reconstruct_normal_double((int32_t)n) * poly;
-    
+    double result =
+    ldexp(poly, (int32_t)n);
     return (float)result;
 }
