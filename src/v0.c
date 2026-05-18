@@ -26,8 +26,8 @@ poly = fma(poly, r, D_T10_C2);
 poly = fma(poly, r, D_T10_C1);
 poly = fma(poly, r, D_T10_C0);
 
-double result =
-    ldexp(poly, (int32_t)n);
-return (float)result;
+float result =
+    ldexp((float)poly, (int32_t)n);
+return result;
 
 }

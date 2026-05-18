@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 #include "common.h"
 #include "exp10_versions.h"
 #include "bench.h"
 #include "accuracy_logger.h"
+float exp10f_v0(float x);
 
 int main(void) {
     init_table();
@@ -77,6 +79,6 @@ int main(void) {
     printf("2) vector row V7 reports throughput only\n");
     printf("3) accuracy report was written to accuracy_report.txt\n");
     printf("\n");
-
-    return 0;
+    printf("%.20e\n", exp10_v0(-38.83288f));
+    printf("%.20e\n", powf(10.0f,-38.83288f));
 }

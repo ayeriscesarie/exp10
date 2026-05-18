@@ -20,7 +20,8 @@ float exp10_v4(float x) {
     poly = fma(poly, r, D_M5_C1);
     poly = fma(poly, r, D_M5_C0);
 
-double result =
-    ldexp(poly, (int32_t)n);
-        return (float)result;
+float result =
+    ldexp((float)poly, (int32_t)n);
+return result;
+
 }
