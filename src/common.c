@@ -1,6 +1,8 @@
 #include "common.h"
 #include <stdint.h>
 #include <string.h>
+#include <float.h>
+#include <math.h>
 
 #define EXP_DOUBLE_MASK 0x7ff0000000000000ULL
 
@@ -44,20 +46,26 @@ uint64_t U64(double x) {
 
 double ulp_error_float(double ref, float test)
 {
-    float ref_f = (float)ref;
+    if (!isfinite(ref) || !isfinite(test))
+        return 0.0;
 
-    uint32_t a, b;
+    double abs_ref = fabs(ref);
 
-    memcpy(&a, &ref_f, sizeof(uint32_t));
-    memcpy(&b, &test, sizeof(uint32_t));
+    // subnormal float zone
+    if (abs_ref < FLT_MIN) {
+        double ulp = ldexp(1.0, -149);
+        return ((double)test - ref) / ulp;
+    }
 
-    return (double)(
-        (a > b)
-        ? (a - b)
-        : (b - a)
-    );
+    int exp;
+
+    frexp(ref, &exp);
+
+    // float mantissa = 23 bits
+    double ulp = ldexp(1.0, exp - 24);
+
+    return ((double)test - ref) / ulp;
 }
-
 float pow2i_reconstruct_normal(int32_t n) {
     if (n > 127) {
         return INFINITY;

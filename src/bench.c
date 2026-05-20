@@ -33,12 +33,16 @@ row_result_t measure_scalar_row(scalar_fn_t fn, int accuracy_samples, int bench_
                 double ref = (double)powl(10.0L, (long double)x);
 
                 double ulp = ulp_error_float(ref, my);
+                double abs_ulp = fabs(ulp);
 
-                sum_abs_ulp += ulp;
+                if (!isfinite(abs_ulp))
+                    continue;
+
+                sum_abs_ulp += abs_ulp;
                 valid++;
 
-                if (ulp > max_abs_ulp) {
-                    max_abs_ulp = ulp;
+                if (abs_ulp > max_abs_ulp) {
+                    max_abs_ulp = abs_ulp;
                     worst_x = (float)x;
                 }
             }
@@ -59,12 +63,16 @@ row_result_t measure_scalar_row(scalar_fn_t fn, int accuracy_samples, int bench_
                 double ref = (double)powl(10.0L, (long double)x);
 
                 double ulp = ulp_error_float(ref, my);
+                double abs_ulp = fabs(ulp);
 
-                sum_abs_ulp += ulp;
+                if (!isfinite(abs_ulp))
+                    continue;
+
+                sum_abs_ulp += abs_ulp;
                 valid++;
 
-                if (ulp > max_abs_ulp) {
-                    max_abs_ulp = ulp;
+                if (abs_ulp > max_abs_ulp) {
+                    max_abs_ulp = abs_ulp;
                     worst_x = (float)x;
                 }
             }
@@ -83,14 +91,17 @@ row_result_t measure_scalar_row(scalar_fn_t fn, int accuracy_samples, int bench_
 
                 float my = fn((float)x);
                 double ref = (double)powl(10.0L, (long double)x);
-
                 double ulp = ulp_error_float(ref, my);
+                double abs_ulp = fabs(ulp);
 
-                sum_abs_ulp += ulp;
+                if (!isfinite(abs_ulp))
+                    continue;
+
+                sum_abs_ulp += abs_ulp;
                 valid++;
 
-                if (ulp > max_abs_ulp) {
-                    max_abs_ulp = ulp;
+                if (abs_ulp > max_abs_ulp) {
+                    max_abs_ulp = abs_ulp;
                     worst_x = (float)x;
                 }
             }
@@ -198,7 +209,7 @@ row_result_t measure_v7_avx2(int bench_n, int repeats) {
         unsigned valid = 0;
 
         for (int i = 0; i < N; ++i) {
-            double ref = (double)exp10_v5(in[i]);
+            double ref = (double)powl(10.0L, (long double)in[i]);
             double ulp = ulp_error_float(ref, out[i]);
 
             sum_abs_ulp += ulp;

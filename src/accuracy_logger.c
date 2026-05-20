@@ -4,6 +4,25 @@
 #include <math.h>
 #include <float.h>
 
+#include <stdint.h>
+
+#if defined(_MSC_VER)
+#include <intrin.h>
+#endif
+
+static inline uint64_t rdtsc_now(void)
+{
+#if defined(_MSC_VER)
+    return __rdtsc();
+#else
+    unsigned hi, lo;
+
+    __asm__ volatile ("rdtsc" : "=a"(lo), "=d"(hi));
+
+    return ((uint64_t)hi << 32) | lo;
+#endif
+}
+
 typedef struct {
     float left;
     float right;
@@ -130,7 +149,22 @@ void write_accuracy_report_for_version(
     double max_allowed_ulp
 ) {
     FILE *file = fopen(filename, "a");
+    const int LAT_N = 200000;
 
+    volatile float sink = 0.0f;
+
+    uint64_t t0 = rdtsc_now();
+
+    for (int i = 0; i < LAT_N; ++i) {
+        float x = -10.0f + 20.0f * ((float)i / (float)LAT_N);
+
+        sink += fn(x);
+    }
+
+uint64_t t1 = rdtsc_now();
+
+double latency_cpe =
+    (double)(t1 - t0) / (double)LAT_N;
     if (file == NULL) {
         printf("Cannot open accuracy report file: %s\n", filename);
         return;
@@ -141,7 +175,7 @@ void write_accuracy_report_for_version(
 
     fprintf(file, "\n");
     fprintf(file, "===== Accuracy report for %s =====\n", version_name);
-
+    fprintf(file, "Latency: %.2f cpe\n", latency_cpe);
     for (int i = 0; i < range_count; ++i) {
         test_one_range(
             file,
