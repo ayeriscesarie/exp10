@@ -6,7 +6,7 @@ float exp10_v4(float x) {
     if (isnan(x)) return NAN;
     if (isinf(x)) return x > 0 ? INFINITY : 0.0f;
     if (x > X_MAX_NORMAL) return INFINITY;
-    if (x < X_MIN_NORMAL) return 0.0f;
+    if (x < X_MIN_FLOAT) return 0.0f;
 
     double xd = (double)x;
 

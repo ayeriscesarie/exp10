@@ -81,4 +81,19 @@ int main(void) {
     printf("\n");
     printf("%.20e\n", exp10_v0(-38.83288f));
     printf("%.20e\n", powf(10.0f,-38.83288f));
+    printf("%.20e\n", exp10_v6(-38.83288f));
+
+    float my = exp10_v6(-38.83288f);
+float ref = powf(10.0f,-38.83288f);
+
+printf("my  = %.20e\n", my);
+printf("ref = %.20e\n", ref);
+printf("diff = %.20e\n", fabsf(my - ref));
+
+uint32_t a, b;
+
+memcpy(&a, &my, 4);
+memcpy(&b, &ref, 4);
+
+printf("%u %u diff=%u\n", a, b, abs((int)a - (int)b));
 }

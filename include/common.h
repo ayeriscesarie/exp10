@@ -11,8 +11,7 @@
 
 #define FLOAT_BIAS 127
 #define FLOAT_MANTISSA_LENGTH 23
-
-#define X_MIN_NORMAL (-37.9f)
+#define X_MIN_FLOAT (-44.85347f)
 #define X_MAX_NORMAL ( 38.53184f)
 
 #define SHIFTER 12582912.0f /* 0x1.8p23 */
