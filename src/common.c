@@ -1,4 +1,6 @@
 #include "common.h"
+#include <stdint.h>
+#include <string.h>
 
 #define EXP_DOUBLE_MASK 0x7ff0000000000000ULL
 
@@ -40,15 +42,20 @@ uint64_t U64(double x) {
     return v.u;
 }
 
-double ulp_error_float(double ref, float test) {
-    uint64_t ref_bits = U64(ref);
-    uint64_t A_dot = ref_bits & EXP_DOUBLE_MASK;
+double ulp_error_float(double ref, float test)
+{
+    float ref_f = (float)ref;
 
-    A_dot -= (23ULL << 52);
+    uint32_t a, b;
 
-    double ulp_error = (((double)test) - ref) / F64(A_dot);
+    memcpy(&a, &ref_f, sizeof(uint32_t));
+    memcpy(&b, &test, sizeof(uint32_t));
 
-    return ulp_error;
+    return (double)(
+        (a > b)
+        ? (a - b)
+        : (b - a)
+    );
 }
 
 float pow2i_reconstruct_normal(int32_t n) {
