@@ -30,7 +30,8 @@ float exp10_v6(float x) {
     double base = pow2i_reconstruct_normal_double(n);
     double table_val = (double)g_exp2_table[i];
 
-float result =
-    ldexpf((float)(table_val * poly), n);
+    float result =
+        (float)(base * table_val * poly);
+
     return result;
 }

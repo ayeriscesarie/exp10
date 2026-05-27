@@ -9,19 +9,22 @@
 #include <x86intrin.h>
 #include <immintrin.h>
 
+
 #define FLOAT_BIAS 127
 #define FLOAT_MANTISSA_LENGTH 23
-#define X_MIN_FLOAT (-44.85347f)
-#define X_MIN_NORMAL (-37.9f)
-#define X_MAX_NORMAL ( 38.53184f)
+#define X_MAX_NORMAL  38.53184f
+#define X_MIN_NORMAL -37.92978f
 
+#define X_MAX_FLOAT   38.53184f
+#define X_MIN_FLOAT  -44.85347f
+#define LOG2_10_F 3.32192809489f
 #define SHIFTER 12582912.0f /* 0x1.8p23 */
 
-#define LOG2_10      3.32192809488736234787f
+#define LOG2_10      3.32192809488736234787
 
 /* V1+ : split log2(10) */
 #define LOG2_10_HI   3.32177734375f
-#define LOG2_10_LO   0.00015075113736234787f
+#define LOG2_10_LO 0.00015075114f
 
 /* Taylor degree 10 for 2^r */
 #define T10_C0  1.0f
@@ -52,6 +55,15 @@
 #define M5_C3  0.05550341f
 #define M5_C4  0.00967076f
 #define M5_C5  0.00133953f
+
+#define M7_C0 1.0000000000f
+#define M7_C1 0.6931471825f
+#define M7_C2 0.2402265072f
+#define M7_C3 0.0555041097f
+#define M7_C4 0.0096181291f
+#define M7_C5 0.0013333558f
+#define M7_C6 0.0001540353f
+#define M7_C7 0.0000152527f
 
 /* V6: tiny poly for 2^r on very small interval [-1/64, 1/64] */
 #define S2_C0  1.0f

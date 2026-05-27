@@ -7,6 +7,8 @@
 #include "bench.h"
 #include "accuracy_logger.h"
 #define LN10_F 0x1.26bb1cp+1f
+//#include <mkl.h>
+//#include <mkl_vml.h>
 
 float exp10f_v0(float x);
 
@@ -15,7 +17,22 @@ static float libc_exp10f_wrapper(float x)
     return expf(x * LN10_F);
 }
 
+/*static float mkl_exp10f_wrapper(float x)
+{
+    float in[1] = {x};
+    float out[1];
+
+    vsExp10(1, in, out);
+
+    return out[0];
+}*/
+static float powf_wrapper(float x)
+{
+    return powf(10.0f, x);
+}
+
 int main(void) {
+   // mkl_set_num_threads(1);
     init_table();
 
     const int ACCURACY_SAMPLES = 50000;
@@ -31,6 +48,8 @@ int main(void) {
         {"V5", "no explicit fmaf in source",             exp10_v5},
         {"V6", "table of 2^(i/32) + tiny residual poly", exp10_v6},
         {"LIBC", "libc expf(x * ln10)", libc_exp10f_wrapper},
+        {"powf", "powf(10,x)", powf_wrapper},
+     //  {"MKL", "Intel oneMKL vsExp10", mkl_exp10f_wrapper},
     };
 
     const int row_count = (int)(sizeof(rows) / sizeof(rows[0]));

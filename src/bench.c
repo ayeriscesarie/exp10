@@ -87,7 +87,7 @@ row_result_t measure_scalar_row(scalar_fn_t fn, int accuracy_samples, int bench_
                 double t = (double)j / (double)(pts_per_interval - 1);
                 double x = left + (right - left) * t;
 
-                if (x < X_MIN_FLOAT || x > X_MAX_NORMAL) continue;
+                if (x < X_MIN_FLOAT || x > X_MAX_FLOAT) continue;
 
                 float my = fn((float)x);
                 double ref = (double)powl(10.0L, (long double)x);

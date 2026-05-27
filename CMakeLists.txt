@@ -4,13 +4,13 @@ project(exp10_project C)
 
 set(CMAKE_C_STANDARD 11)
 
-# флаги оптимизации
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -march=native -mfma -mavx2")
 
-# подключаем include
-include_directories(include)
+include_directories(
+    include
+    "$ENV{MKLROOT}/include"
+)
 
-# список всех исходников
 set(SOURCES
     src/main.c
     src/common.c
@@ -26,8 +26,9 @@ set(SOURCES
     src/v7_avx2.c
 )
 
-# создаём исполняемый файл
 add_executable(lab ${SOURCES})
 
-# линковка math библиотеки
-target_link_libraries(lab m)
+target_link_libraries(lab
+    m
+    "$ENV{MKLROOT}/lib/mkl_rt.lib"
+)

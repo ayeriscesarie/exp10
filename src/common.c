@@ -49,23 +49,20 @@ double ulp_error_float(double ref, float test)
     if (!isfinite(ref) || !isfinite(test))
         return 0.0;
 
-    double abs_ref = fabs(ref);
+    float ref_f = (float)ref;
 
-    // subnormal float zone
-    if (abs_ref < FLT_MIN) {
-        double ulp = ldexp(1.0, -149);
-        return ((double)test - ref) / ulp;
-    }
+    float next =
+        nextafterf(ref_f, INFINITY);
 
-    int exp;
+    double ulp =
+        (double)next - (double)ref_f;
 
-    frexp(ref, &exp);
+    if (ulp == 0.0)
+        return 0.0;
 
-    // float mantissa = 23 bits
-    double ulp = ldexp(1.0, exp - 24);
-
-    return ((double)test - ref) / ulp;
+    return ((double)test - (double)ref_f) / ulp;
 }
+
 float pow2i_reconstruct_normal(int32_t n) {
     if (n > 127) {
         return INFINITY;

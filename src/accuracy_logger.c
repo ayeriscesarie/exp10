@@ -66,12 +66,8 @@ static void write_v7_accuracy_report(
         double max_abs_ulp = 0.0;
         double sum_abs_ulp = 0.0;
 
-        double min_signed_ulp = DBL_MAX;
-        double max_signed_ulp = 0;
 
         float worst_x = r.left;
-        float min_x = r.left;
-        float max_x = r.left;
 
         int valid = 0;
 
@@ -128,16 +124,6 @@ static void write_v7_accuracy_report(
                     worst_x = x;
                 }
 
-                if (ulp < min_signed_ulp) {
-                    min_signed_ulp = ulp;
-                    min_x = x;
-                }
-
-                if (ulp > max_signed_ulp) {
-                    max_signed_ulp = ulp;
-                    max_x = x;
-                }
-
                 sum_abs_ulp += abs_ulp;
                 valid++;
             }
@@ -160,20 +146,12 @@ static void write_v7_accuracy_report(
         fprintf(
             file,
             "V7: %-4s #  maxULP %+.6e  avgULP %+.6e  "
-            "minULP %+.6e at x=%+.6e  "
-            "maxULP_signed %+.6e at x=%+.6e  "
             "[%+.6e .. %+.6e] : %s\n",
 
             status,
 
             max_abs_ulp,
             avg_abs_ulp,
-
-            min_signed_ulp,
-            min_x,
-
-            max_signed_ulp,
-            max_x,
 
             r.left,
             r.right,
@@ -257,12 +235,10 @@ static void test_one_range(
     double max_abs_ulp = 0.0;
     double sum_abs_ulp = 0.0;
 
-    double min_signed_ulp = DBL_MAX;
-    double max_signed_ulp = -DBL_MAX;
+
 
     float worst_x = r.left;
-    float min_x = r.left;
-    float max_x = r.left;
+
 
     int valid = 0;
 
@@ -285,15 +261,7 @@ static void test_one_range(
             worst_x = x;
         }
 
-        if (ulp < min_signed_ulp) {
-            min_signed_ulp = ulp;
-            min_x = x;
-        }
 
-        if (ulp > max_signed_ulp) {
-            max_signed_ulp = ulp;
-            max_x = x;
-        }
 
         sum_abs_ulp += abs_ulp;
         valid++;
@@ -307,23 +275,25 @@ static void test_one_range(
         (*fail_count)++;
     }
 
-    fprintf(
-        file,
-        "%s: %-4s #  maxULP %+.6e  avgULP %+.6e  "
-        "minULP %+.6e at x=%+.6e  maxULP_signed %+.6e at x=%+.6e  "
-        "[%+.6e .. %+.6e] : %s\n",
-        version_name,
-        status,
-        max_abs_ulp,
-        avg_abs_ulp,
-        min_signed_ulp,
-        min_x,
-        max_signed_ulp,
-        max_x,
-        r.left,
-        r.right,
-        r.name
-    );
+fprintf(
+    file,
+    "%s: %-4s #  maxULP %.6e at x=%+.6e  "
+    "avgULP %.6e  "
+    "[%+.6e .. %+.6e] : %s\n",
+
+    version_name,
+    status,
+
+    max_abs_ulp,
+    worst_x,
+
+    avg_abs_ulp,
+
+    r.left,
+    r.right,
+
+    r.name
+);
 }
 
 void write_accuracy_report_for_version(
