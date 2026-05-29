@@ -23,8 +23,8 @@
 #define LOG2_10      3.32192809488736234787
 
 /* V1+ : split log2(10) */
-#define LOG2_10_HI   3.32177734375f
-#define LOG2_10_LO 0.00015075114f
+#define LOG2_10_HI 3.3203125f // = 425/128, представим во float точно
+#define LOG2_10_LO 0.0016155949f // log2(10) - HI
 
 /* Taylor degree 10 for 2^r */
 #define T10_C0  1.0f
@@ -69,6 +69,7 @@
 #define S2_C0  1.0f
 #define S2_C1  0.6931471805599453f
 #define S2_C2  0.2402265069591007f
+#define S2_C3 0.05550410866482158f
 
 #define D_LOG2_10 3.32192809488736234787
 #define D_LOG2_10_HI 3.32177734375
@@ -106,13 +107,14 @@
 #define D_S2_C1 0.69315734356519509429
 #define D_S2_C2 0.24022474583238120904
 
-#define D_TABLE_SCALE 32.0
-#define D_INV_TABLE_SCALE (1.0 / 32.0)
+#define D_TABLE_SCALE 64.0
+#define D_INV_TABLE_SCALE (1.0 / 64.0)
 
 double pow2i_reconstruct_normal_double(int32_t n);
 
-#define TABLE_BITS 5
+#define TABLE_BITS 6
 #define TABLE_SIZE (1 << TABLE_BITS)
+
 #define TABLE_SCALE ((float)TABLE_SIZE)
 #define INV_TABLE_SCALE (1.0f / (float)TABLE_SIZE)
 
@@ -127,7 +129,7 @@ uint32_t U32(float x);
 
 double F64(uint64_t x);
 uint64_t U64(double x);
-
+double my_nearbyint_custom(double x);
 double ulp_error_float(double ref, float test);
 
 float pow2i_reconstruct_normal(int32_t n);
@@ -139,4 +141,15 @@ uint64_t stop_tsc(void);
 
 void init_table(void);
 
+float my_ldexpf(float poly, int n);
+
+int my_isnanf(float x);
+int my_isinff(float x);
+int32_t my_floor_int(double x);
+float my_inf(void);
+float my_nan(void);
+
+float my_fabsf(float x);
+
+double my_fabs(double x);
 #endif

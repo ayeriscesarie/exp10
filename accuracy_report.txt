@@ -1,177 +1,177 @@
 
 ===== Accuracy report for V0 =====
-Latency: 132.26 cpe
-V0: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 3.190000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
-V0: PASS #  maxULP 1.000000e+00 at x=-3.499100e+01  avgULP 5.650000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
-V0: PASS #  maxULP 1.000000e+00 at x=-3.185279e+01  avgULP 5.970000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
-V0: PASS #  maxULP 1.000000e+00 at x=-1.599520e+01  avgULP 6.000000e-02  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
-V0: PASS #  maxULP 1.000000e+00 at x=-7.999600e+00  avgULP 6.260000e-02  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
-V0: PASS #  maxULP 1.000000e+00 at x=-4.000000e+00  avgULP 5.930000e-02  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
-V0: PASS #  maxULP 1.000000e+00 at x=-1.996300e+00  avgULP 5.940000e-02  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
-V0: PASS #  maxULP 1.000000e+00 at x=-9.999500e-01  avgULP 5.140000e-02  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
-V0: PASS #  maxULP 1.000000e+00 at x=-4.998000e-01  avgULP 6.140000e-02  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
-V0: PASS #  maxULP 1.000000e+00 at x=-2.497250e-01  avgULP 7.590000e-02  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
-V0: PASS #  maxULP 1.000000e+00 at x=-1.249125e-01  avgULP 6.430000e-02  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
-V0: PASS #  maxULP 1.000000e+00 at x=+9.575957e-03  avgULP 4.080000e-02  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
-V0: PASS #  maxULP 1.000000e+00 at x=+1.250250e-01  avgULP 9.090000e-02  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
-V0: PASS #  maxULP 1.000000e+00 at x=+2.504250e-01  avgULP 5.430000e-02  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
-V0: PASS #  maxULP 1.000000e+00 at x=+5.001500e-01  avgULP 5.280000e-02  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
-V0: PASS #  maxULP 1.000000e+00 at x=+1.004900e+00  avgULP 6.500000e-02  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
-V0: PASS #  maxULP 1.000000e+00 at x=+2.000200e+00  avgULP 5.780000e-02  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
-V0: PASS #  maxULP 1.000000e+00 at x=+4.001600e+00  avgULP 6.460000e-02  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
-V0: PASS #  maxULP 1.000000e+00 at x=+8.004801e+00  avgULP 5.980000e-02  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
-V0: PASS #  maxULP 1.000000e+00 at x=+1.603360e+01  avgULP 6.350000e-02  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
-V0: PASS #  maxULP 1.000000e+00 at x=+3.203280e+01  avgULP 6.222440e-02  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
+Latency: 54.00 cpe
+V0: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 4.080000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
+V0: PASS #  maxULP 1.000000e+00 at x=-3.499100e+01  avgULP 7.040000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
+V0: PASS #  maxULP 1.000000e+00 at x=-3.196320e+01  avgULP 7.160000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
+V0: PASS #  maxULP 1.000000e+00 at x=-1.599520e+01  avgULP 7.440000e-02  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
+V0: PASS #  maxULP 1.000000e+00 at x=-7.999600e+00  avgULP 7.240000e-02  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
+V0: PASS #  maxULP 1.000000e+00 at x=-4.000000e+00  avgULP 6.780000e-02  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
+V0: PASS #  maxULP 1.000000e+00 at x=-1.996300e+00  avgULP 7.440000e-02  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
+V0: PASS #  maxULP 1.000000e+00 at x=-9.997500e-01  avgULP 6.420000e-02  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
+V0: PASS #  maxULP 1.000000e+00 at x=-4.998000e-01  avgULP 7.530000e-02  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
+V0: PASS #  maxULP 1.000000e+00 at x=-2.497250e-01  avgULP 8.880000e-02  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
+V0: PASS #  maxULP 1.000000e+00 at x=-1.249000e-01  avgULP 7.320000e-02  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
+V0: PASS #  maxULP 1.000000e+00 at x=+8.100810e-03  avgULP 4.720000e-02  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
+V0: PASS #  maxULP 1.000000e+00 at x=+1.251750e-01  avgULP 1.077000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
+V0: PASS #  maxULP 1.000000e+00 at x=+2.500750e-01  avgULP 6.230000e-02  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
+V0: PASS #  maxULP 1.000000e+00 at x=+5.003000e-01  avgULP 6.390000e-02  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
+V0: PASS #  maxULP 1.000000e+00 at x=+1.000800e+00  avgULP 7.890000e-02  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
+V0: PASS #  maxULP 1.000000e+00 at x=+2.000200e+00  avgULP 7.010000e-02  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
+V0: PASS #  maxULP 1.000000e+00 at x=+4.001600e+00  avgULP 8.010000e-02  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
+V0: PASS #  maxULP 1.000000e+00 at x=+8.009601e+00  avgULP 7.390000e-02  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
+V0: PASS #  maxULP 1.000000e+00 at x=+1.603360e+01  avgULP 7.310000e-02  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
+V0: PASS #  maxULP 1.000000e+00 at x=+3.203120e+01  avgULP 6.958375e-02  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
 V0: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V1 =====
-Latency: 66.44 cpe
-V1: PASS #  maxULP 2.000000e+00 at x=-3.777828e+01  avgULP 6.040000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
-V1: PASS #  maxULP 3.000000e+00 at x=-3.386489e+01  avgULP 2.064000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
-V1: PASS #  maxULP 3.000000e+00 at x=-2.453365e+01  avgULP 2.054000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
-V1: PASS #  maxULP 2.000000e+00 at x=-1.580318e+01  avgULP 1.987000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
-V1: PASS #  maxULP 2.000000e+00 at x=-7.977198e+00  avgULP 2.140000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
-V1: PASS #  maxULP 3.000000e+00 at x=-3.159716e+00  avgULP 1.942000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
-V1: PASS #  maxULP 2.000000e+00 at x=-1.956996e+00  avgULP 2.345000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
-V1: PASS #  maxULP 3.000000e+00 at x=-7.523252e-01  avgULP 1.387000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
-V1: PASS #  maxULP 2.000000e+00 at x=-4.560206e-01  avgULP 2.309000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
-V1: PASS #  maxULP 3.000000e+00 at x=-1.503900e-01  avgULP 3.905000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
-V1: PASS #  maxULP 1.000000e+00 at x=-1.250000e-01  avgULP 9.750000e-02  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
-V1: PASS #  maxULP 1.000000e+00 at x=+9.575957e-03  avgULP 5.680000e-02  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
-V1: PASS #  maxULP 3.000000e+00 at x=+1.520277e-01  avgULP 4.211000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
-V1: PASS #  maxULP 3.000000e+00 at x=+4.521952e-01  avgULP 2.246000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
-V1: PASS #  maxULP 3.000000e+00 at x=+7.526753e-01  avgULP 1.407000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
-V1: PASS #  maxULP 2.000000e+00 at x=+1.050705e+00  avgULP 2.396000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
-V1: PASS #  maxULP 2.000000e+00 at x=+2.257826e+00  avgULP 1.866000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
-V1: PASS #  maxULP 3.000000e+00 at x=+7.676767e+00  avgULP 2.082000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
-V1: PASS #  maxULP 3.000000e+00 at x=+8.278428e+00  avgULP 1.982000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
-V1: PASS #  maxULP 3.000000e+00 at x=+2.393199e+01  avgULP 2.059000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
-V1: PASS #  maxULP 2.000000e+00 at x=+3.206001e+01  avgULP 2.035767e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
+Latency: 35.92 cpe
+V1: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 3.080000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
+V1: PASS #  maxULP 1.000000e+00 at x=-3.499100e+01  avgULP 7.040000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
+V1: PASS #  maxULP 1.000000e+00 at x=-3.196320e+01  avgULP 7.160000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
+V1: PASS #  maxULP 1.000000e+00 at x=-1.599520e+01  avgULP 7.440000e-02  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
+V1: PASS #  maxULP 1.000000e+00 at x=-7.999600e+00  avgULP 7.240000e-02  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
+V1: PASS #  maxULP 1.000000e+00 at x=-4.000000e+00  avgULP 6.780000e-02  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
+V1: PASS #  maxULP 1.000000e+00 at x=-1.996300e+00  avgULP 7.440000e-02  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
+V1: PASS #  maxULP 1.000000e+00 at x=-9.997500e-01  avgULP 6.420000e-02  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
+V1: PASS #  maxULP 1.000000e+00 at x=-4.998000e-01  avgULP 7.530000e-02  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
+V1: PASS #  maxULP 1.000000e+00 at x=-2.497250e-01  avgULP 8.880000e-02  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
+V1: PASS #  maxULP 1.000000e+00 at x=-1.249000e-01  avgULP 7.320000e-02  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
+V1: PASS #  maxULP 1.000000e+00 at x=+8.100810e-03  avgULP 4.720000e-02  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
+V1: PASS #  maxULP 1.000000e+00 at x=+1.251750e-01  avgULP 1.077000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
+V1: PASS #  maxULP 1.000000e+00 at x=+2.500750e-01  avgULP 6.230000e-02  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
+V1: PASS #  maxULP 1.000000e+00 at x=+5.003000e-01  avgULP 6.390000e-02  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
+V1: PASS #  maxULP 1.000000e+00 at x=+1.000800e+00  avgULP 7.890000e-02  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
+V1: PASS #  maxULP 1.000000e+00 at x=+2.000200e+00  avgULP 7.010000e-02  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
+V1: PASS #  maxULP 1.000000e+00 at x=+4.001600e+00  avgULP 8.010000e-02  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
+V1: PASS #  maxULP 1.000000e+00 at x=+8.009601e+00  avgULP 7.390000e-02  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
+V1: PASS #  maxULP 1.000000e+00 at x=+1.603360e+01  avgULP 7.310000e-02  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
+V1: PASS #  maxULP 1.000000e+00 at x=+3.203120e+01  avgULP 6.958375e-02  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
 V1: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V2 =====
-Latency: 72.58 cpe
-V2: PASS #  maxULP 4.000000e+00 at x=-3.597210e+01  avgULP 1.541000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
-V2: PASS #  maxULP 4.000000e+00 at x=-2.603810e+01  avgULP 6.845000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
-V2: PASS #  maxULP 4.000000e+00 at x=-3.055346e+01  avgULP 6.894000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
-V2: PASS #  maxULP 4.000000e+00 at x=-1.580398e+01  avgULP 6.733000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
-V2: PASS #  maxULP 4.000000e+00 at x=-7.375137e+00  avgULP 6.847000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
-V2: PASS #  maxULP 4.000000e+00 at x=-3.762576e+00  avgULP 6.948000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
-V2: PASS #  maxULP 4.000000e+00 at x=-1.655566e+00  avgULP 6.670000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
-V2: PASS #  maxULP 4.000000e+00 at x=-7.524753e-01  avgULP 7.149000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
-V2: PASS #  maxULP 4.000000e+00 at x=-4.514201e-01  avgULP 6.596000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
-V2: PASS #  maxULP 4.000000e+00 at x=-1.504776e-01  avgULP 6.596000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
-V2: PASS #  maxULP 2.000000e+00 at x=-9.692219e-02  avgULP 8.640000e-01  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
-V2: PASS #  maxULP 2.000000e+00 at x=+7.189469e-02  avgULP 4.727000e-01  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
-V2: PASS #  maxULP 4.000000e+00 at x=+1.505150e-01  avgULP 9.466000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
-V2: PASS #  maxULP 4.000000e+00 at x=+4.515952e-01  avgULP 5.207000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
-V2: PASS #  maxULP 4.000000e+00 at x=+7.525753e-01  avgULP 7.236000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
-V2: PASS #  maxULP 4.000000e+00 at x=+1.053705e+00  avgULP 6.634000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
-V2: PASS #  maxULP 4.000000e+00 at x=+2.558856e+00  avgULP 6.902000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
-V2: PASS #  maxULP 4.000000e+00 at x=+4.365636e+00  avgULP 6.836000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
-V2: PASS #  maxULP 4.000000e+00 at x=+1.038584e+01  avgULP 6.834000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
-V2: PASS #  maxULP 4.000000e+00 at x=+1.731053e+01  avgULP 6.943000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
-V2: PASS #  maxULP 4.000000e+00 at x=+3.236164e+01  avgULP 6.926752e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
+Latency: 30.81 cpe
+V2: PASS #  maxULP 4.000000e+00 at x=-3.597210e+01  avgULP 1.624000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
+V2: PASS #  maxULP 3.000000e+00 at x=-3.476798e+01  avgULP 6.993000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
+V2: PASS #  maxULP 4.000000e+00 at x=-3.055346e+01  avgULP 7.015000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
+V2: PASS #  maxULP 4.000000e+00 at x=-1.580398e+01  avgULP 6.812000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
+V2: PASS #  maxULP 4.000000e+00 at x=-7.375137e+00  avgULP 6.908000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
+V2: PASS #  maxULP 4.000000e+00 at x=-3.762576e+00  avgULP 6.986000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
+V2: PASS #  maxULP 4.000000e+00 at x=-1.955896e+00  avgULP 6.683000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
+V2: PASS #  maxULP 4.000000e+00 at x=-7.524753e-01  avgULP 7.173000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
+V2: PASS #  maxULP 4.000000e+00 at x=-4.514201e-01  avgULP 6.635000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
+V2: PASS #  maxULP 4.000000e+00 at x=-1.504650e-01  avgULP 6.666000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
+V2: PASS #  maxULP 2.000000e+00 at x=-9.755976e-02  avgULP 8.638000e-01  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
+V2: PASS #  maxULP 2.000000e+00 at x=+7.163216e-02  avgULP 4.743000e-01  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
+V2: PASS #  maxULP 4.000000e+00 at x=+1.505150e-01  avgULP 9.488000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
+V2: PASS #  maxULP 4.000000e+00 at x=+4.515952e-01  avgULP 5.236000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
+V2: PASS #  maxULP 4.000000e+00 at x=+7.526252e-01  avgULP 7.208000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
+V2: PASS #  maxULP 4.000000e+00 at x=+1.053705e+00  avgULP 6.646000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
+V2: PASS #  maxULP 4.000000e+00 at x=+2.558856e+00  avgULP 6.918000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
+V2: PASS #  maxULP 4.000000e+00 at x=+4.365236e+00  avgULP 6.847000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
+V2: PASS #  maxULP 4.000000e+00 at x=+9.181718e+00  avgULP 6.833000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
+V2: PASS #  maxULP 4.000000e+00 at x=+1.731053e+01  avgULP 6.827000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
+V2: PASS #  maxULP 4.000000e+00 at x=+3.236164e+01  avgULP 6.713892e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
 V2: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V3 =====
-Latency: 77.48 cpe
-V3: PASS #  maxULP 4.000000e+00 at x=-3.506901e+01  avgULP 1.608000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
-V3: PASS #  maxULP 4.000000e+00 at x=-3.446695e+01  avgULP 7.423000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
-V3: PASS #  maxULP 4.000000e+00 at x=-3.145595e+01  avgULP 7.389000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
-V3: PASS #  maxULP 4.000000e+00 at x=-1.580398e+01  avgULP 7.293000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
-V3: PASS #  maxULP 4.000000e+00 at x=-7.375137e+00  avgULP 7.393000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
-V3: PASS #  maxULP 4.000000e+00 at x=-3.762576e+00  avgULP 7.438000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
-V3: PASS #  maxULP 4.000000e+00 at x=-1.956096e+00  avgULP 7.278000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
-V3: PASS #  maxULP 4.000000e+00 at x=-7.524253e-01  avgULP 7.649000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
-V3: PASS #  maxULP 4.000000e+00 at x=-4.513952e-01  avgULP 7.198000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
-V3: PASS #  maxULP 4.000000e+00 at x=-1.504900e-01  avgULP 7.131000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
-V3: PASS #  maxULP 3.000000e+00 at x=-8.122063e-02  avgULP 8.976000e-01  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
-V3: PASS #  maxULP 2.000000e+00 at x=+4.064156e-02  avgULP 5.340000e-01  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
-V3: PASS #  maxULP 4.000000e+00 at x=+1.505150e-01  avgULP 9.793000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
-V3: PASS #  maxULP 4.000000e+00 at x=+4.515952e-01  avgULP 5.875000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
-V3: PASS #  maxULP 4.000000e+00 at x=+7.526252e-01  avgULP 7.676000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
-V3: PASS #  maxULP 4.000000e+00 at x=+1.053805e+00  avgULP 7.146000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
-V3: PASS #  maxULP 4.000000e+00 at x=+2.558856e+00  avgULP 7.423000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
-V3: PASS #  maxULP 4.000000e+00 at x=+4.064806e+00  avgULP 7.371000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
-V3: PASS #  maxULP 4.000000e+00 at x=+8.280028e+00  avgULP 7.337000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
-V3: PASS #  maxULP 4.000000e+00 at x=+1.731053e+01  avgULP 7.373000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
-V3: PASS #  maxULP 4.000000e+00 at x=+3.206081e+01  avgULP 7.388535e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
+Latency: 30.90 cpe
+V3: PASS #  maxULP 4.000000e+00 at x=-3.506901e+01  avgULP 1.705000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
+V3: PASS #  maxULP 4.000000e+00 at x=-3.446695e+01  avgULP 7.541000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
+V3: PASS #  maxULP 4.000000e+00 at x=-3.145595e+01  avgULP 7.512000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
+V3: PASS #  maxULP 4.000000e+00 at x=-1.580398e+01  avgULP 7.374000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
+V3: PASS #  maxULP 4.000000e+00 at x=-7.375137e+00  avgULP 7.421000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
+V3: PASS #  maxULP 4.000000e+00 at x=-3.762576e+00  avgULP 7.468000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
+V3: PASS #  maxULP 4.000000e+00 at x=-1.956096e+00  avgULP 7.284000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
+V3: PASS #  maxULP 4.000000e+00 at x=-7.523752e-01  avgULP 7.682000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
+V3: PASS #  maxULP 4.000000e+00 at x=-4.513952e-01  avgULP 7.211000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
+V3: PASS #  maxULP 4.000000e+00 at x=-1.504900e-01  avgULP 7.146000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
+V3: PASS #  maxULP 3.000000e+00 at x=-8.255826e-02  avgULP 8.993000e-01  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
+V3: PASS #  maxULP 2.000000e+00 at x=+4.064156e-02  avgULP 5.359000e-01  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
+V3: PASS #  maxULP 4.000000e+00 at x=+1.505150e-01  avgULP 9.811000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
+V3: PASS #  maxULP 4.000000e+00 at x=+4.515952e-01  avgULP 5.908000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
+V3: PASS #  maxULP 4.000000e+00 at x=+7.526252e-01  avgULP 7.663000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
+V3: PASS #  maxULP 4.000000e+00 at x=+1.053605e+00  avgULP 7.152000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
+V3: PASS #  maxULP 4.000000e+00 at x=+2.558856e+00  avgULP 7.451000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
+V3: PASS #  maxULP 4.000000e+00 at x=+4.365236e+00  avgULP 7.365000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
+V3: PASS #  maxULP 4.000000e+00 at x=+8.280028e+00  avgULP 7.326000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
+V3: PASS #  maxULP 4.000000e+00 at x=+1.731053e+01  avgULP 7.314000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
+V3: PASS #  maxULP 4.000000e+00 at x=+3.206081e+01  avgULP 7.237964e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
 V3: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V4 =====
-Latency: 87.29 cpe
-V4: PASS #  maxULP 4.000000e+00 at x=-3.597210e+01  avgULP 1.541000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
-V4: PASS #  maxULP 4.000000e+00 at x=-2.603810e+01  avgULP 6.845000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
-V4: PASS #  maxULP 4.000000e+00 at x=-3.055346e+01  avgULP 6.894000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
-V4: PASS #  maxULP 4.000000e+00 at x=-1.580398e+01  avgULP 6.733000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
-V4: PASS #  maxULP 4.000000e+00 at x=-7.375137e+00  avgULP 6.847000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
-V4: PASS #  maxULP 4.000000e+00 at x=-3.762576e+00  avgULP 6.948000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
-V4: PASS #  maxULP 4.000000e+00 at x=-1.655566e+00  avgULP 6.670000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
-V4: PASS #  maxULP 4.000000e+00 at x=-7.524753e-01  avgULP 7.149000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
-V4: PASS #  maxULP 4.000000e+00 at x=-4.514201e-01  avgULP 6.596000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
-V4: PASS #  maxULP 4.000000e+00 at x=-1.504776e-01  avgULP 6.596000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
-V4: PASS #  maxULP 2.000000e+00 at x=-9.692219e-02  avgULP 8.640000e-01  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
-V4: PASS #  maxULP 2.000000e+00 at x=+7.189469e-02  avgULP 4.727000e-01  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
-V4: PASS #  maxULP 4.000000e+00 at x=+1.505150e-01  avgULP 9.466000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
-V4: PASS #  maxULP 4.000000e+00 at x=+4.515952e-01  avgULP 5.207000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
-V4: PASS #  maxULP 4.000000e+00 at x=+7.525753e-01  avgULP 7.236000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
-V4: PASS #  maxULP 4.000000e+00 at x=+1.053705e+00  avgULP 6.634000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
-V4: PASS #  maxULP 4.000000e+00 at x=+2.558856e+00  avgULP 6.902000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
-V4: PASS #  maxULP 4.000000e+00 at x=+4.365636e+00  avgULP 6.836000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
-V4: PASS #  maxULP 4.000000e+00 at x=+1.038584e+01  avgULP 6.834000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
-V4: PASS #  maxULP 4.000000e+00 at x=+1.731053e+01  avgULP 6.943000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
-V4: PASS #  maxULP 4.000000e+00 at x=+3.236164e+01  avgULP 6.926752e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
+Latency: 30.14 cpe
+V4: PASS #  maxULP 4.000000e+00 at x=-3.597210e+01  avgULP 1.624000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
+V4: PASS #  maxULP 3.000000e+00 at x=-3.476798e+01  avgULP 6.993000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
+V4: PASS #  maxULP 4.000000e+00 at x=-3.055346e+01  avgULP 7.015000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
+V4: PASS #  maxULP 4.000000e+00 at x=-1.580398e+01  avgULP 6.812000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
+V4: PASS #  maxULP 4.000000e+00 at x=-7.375137e+00  avgULP 6.908000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
+V4: PASS #  maxULP 4.000000e+00 at x=-3.762576e+00  avgULP 6.986000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
+V4: PASS #  maxULP 4.000000e+00 at x=-1.955896e+00  avgULP 6.683000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
+V4: PASS #  maxULP 4.000000e+00 at x=-7.524753e-01  avgULP 7.173000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
+V4: PASS #  maxULP 4.000000e+00 at x=-4.514201e-01  avgULP 6.635000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
+V4: PASS #  maxULP 4.000000e+00 at x=-1.504650e-01  avgULP 6.666000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
+V4: PASS #  maxULP 2.000000e+00 at x=-9.755976e-02  avgULP 8.638000e-01  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
+V4: PASS #  maxULP 2.000000e+00 at x=+7.163216e-02  avgULP 4.743000e-01  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
+V4: PASS #  maxULP 4.000000e+00 at x=+1.505150e-01  avgULP 9.488000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
+V4: PASS #  maxULP 4.000000e+00 at x=+4.515952e-01  avgULP 5.236000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
+V4: PASS #  maxULP 4.000000e+00 at x=+7.526252e-01  avgULP 7.208000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
+V4: PASS #  maxULP 4.000000e+00 at x=+1.053705e+00  avgULP 6.646000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
+V4: PASS #  maxULP 4.000000e+00 at x=+2.558856e+00  avgULP 6.918000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
+V4: PASS #  maxULP 4.000000e+00 at x=+4.365236e+00  avgULP 6.847000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
+V4: PASS #  maxULP 4.000000e+00 at x=+9.181718e+00  avgULP 6.833000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
+V4: PASS #  maxULP 4.000000e+00 at x=+1.731053e+01  avgULP 6.827000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
+V4: PASS #  maxULP 4.000000e+00 at x=+3.236164e+01  avgULP 6.713892e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
 V4: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V5 =====
-Latency: 66.78 cpe
-V5: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 3.260000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
-V5: PASS #  maxULP 1.000000e+00 at x=-3.499100e+01  avgULP 5.810000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
-V5: PASS #  maxULP 1.000000e+00 at x=-3.185279e+01  avgULP 6.100000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
-V5: PASS #  maxULP 1.000000e+00 at x=-1.599520e+01  avgULP 5.980000e-02  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
-V5: PASS #  maxULP 1.000000e+00 at x=-7.999600e+00  avgULP 6.250000e-02  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
-V5: PASS #  maxULP 1.000000e+00 at x=-4.000000e+00  avgULP 6.010000e-02  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
-V5: PASS #  maxULP 1.000000e+00 at x=-1.997600e+00  avgULP 6.030000e-02  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
-V5: PASS #  maxULP 1.000000e+00 at x=-9.999500e-01  avgULP 5.220000e-02  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
-V5: PASS #  maxULP 1.000000e+00 at x=-4.998000e-01  avgULP 6.320000e-02  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
-V5: PASS #  maxULP 1.000000e+00 at x=-2.497250e-01  avgULP 7.640000e-02  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
-V5: PASS #  maxULP 1.000000e+00 at x=-1.249125e-01  avgULP 6.450000e-02  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
-V5: PASS #  maxULP 1.000000e+00 at x=+9.575957e-03  avgULP 4.100000e-02  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
-V5: PASS #  maxULP 1.000000e+00 at x=+1.250250e-01  avgULP 9.310000e-02  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
-V5: PASS #  maxULP 1.000000e+00 at x=+2.504250e-01  avgULP 5.580000e-02  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
-V5: PASS #  maxULP 1.000000e+00 at x=+5.001500e-01  avgULP 5.290000e-02  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
-V5: PASS #  maxULP 1.000000e+00 at x=+1.004900e+00  avgULP 6.410000e-02  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
-V5: PASS #  maxULP 1.000000e+00 at x=+2.000200e+00  avgULP 5.730000e-02  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
-V5: PASS #  maxULP 1.000000e+00 at x=+4.001600e+00  avgULP 6.580000e-02  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
-V5: PASS #  maxULP 1.000000e+00 at x=+8.004801e+00  avgULP 6.060000e-02  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
-V5: PASS #  maxULP 1.000000e+00 at x=+1.603360e+01  avgULP 6.380000e-02  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
-V5: PASS #  maxULP 1.000000e+00 at x=+3.203280e+01  avgULP 6.430671e-02  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
+Latency: 31.77 cpe
+V5: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 3.120000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
+V5: PASS #  maxULP 1.000000e+00 at x=-3.499100e+01  avgULP 7.190000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
+V5: PASS #  maxULP 1.000000e+00 at x=-3.196320e+01  avgULP 7.370000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
+V5: PASS #  maxULP 1.000000e+00 at x=-1.599520e+01  avgULP 7.520000e-02  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
+V5: PASS #  maxULP 1.000000e+00 at x=-7.999600e+00  avgULP 7.270000e-02  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
+V5: PASS #  maxULP 1.000000e+00 at x=-4.000000e+00  avgULP 6.960000e-02  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
+V5: PASS #  maxULP 1.000000e+00 at x=-1.997600e+00  avgULP 7.450000e-02  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
+V5: PASS #  maxULP 1.000000e+00 at x=-9.997500e-01  avgULP 6.470000e-02  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
+V5: PASS #  maxULP 1.000000e+00 at x=-4.998000e-01  avgULP 7.630000e-02  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
+V5: PASS #  maxULP 1.000000e+00 at x=-2.497250e-01  avgULP 9.050000e-02  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
+V5: PASS #  maxULP 1.000000e+00 at x=-1.249000e-01  avgULP 7.370000e-02  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
+V5: PASS #  maxULP 1.000000e+00 at x=+8.100810e-03  avgULP 4.730000e-02  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
+V5: PASS #  maxULP 1.000000e+00 at x=+1.251750e-01  avgULP 1.117000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
+V5: PASS #  maxULP 1.000000e+00 at x=+2.500750e-01  avgULP 6.420000e-02  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
+V5: PASS #  maxULP 1.000000e+00 at x=+5.003000e-01  avgULP 6.430000e-02  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
+V5: PASS #  maxULP 1.000000e+00 at x=+1.000800e+00  avgULP 7.770000e-02  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
+V5: PASS #  maxULP 1.000000e+00 at x=+2.000200e+00  avgULP 6.890000e-02  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
+V5: PASS #  maxULP 1.000000e+00 at x=+4.001600e+00  avgULP 8.190000e-02  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
+V5: PASS #  maxULP 1.000000e+00 at x=+8.009601e+00  avgULP 7.460000e-02  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
+V5: PASS #  maxULP 1.000000e+00 at x=+1.603360e+01  avgULP 7.350000e-02  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
+V5: PASS #  maxULP 1.000000e+00 at x=+3.203120e+01  avgULP 7.184052e-02  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
 V5: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V6 =====
-Latency: 36.68 cpe
-V6: PASS #  maxULP 2.000000e+00 at x=-3.765527e+01  avgULP 1.211000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
-V6: PASS #  maxULP 2.000000e+00 at x=-3.470097e+01  avgULP 4.625000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
-V6: PASS #  maxULP 2.000000e+00 at x=-3.163356e+01  avgULP 4.547000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
-V6: PASS #  maxULP 2.000000e+00 at x=-1.598000e+01  avgULP 4.597000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
-V6: PASS #  maxULP 2.000000e+00 at x=-7.909191e+00  avgULP 4.569000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
-V6: PASS #  maxULP 2.000000e+00 at x=-3.995600e+00  avgULP 4.676000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
-V6: PASS #  maxULP 2.000000e+00 at x=-1.970797e+00  avgULP 4.554000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
-V6: PASS #  maxULP 2.000000e+00 at x=-9.861986e-01  avgULP 4.569000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
-V6: PASS #  maxULP 2.000000e+00 at x=-4.593709e-01  avgULP 4.673000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
-V6: PASS #  maxULP 2.000000e+00 at x=-1.583783e-01  avgULP 4.179000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
-V6: PASS #  maxULP 2.000000e+00 at x=-1.081608e-01  avgULP 5.084000e-01  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
-V6: PASS #  maxULP 1.000000e+00 at x=+1.125113e-04  avgULP 4.061000e-01  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
-V6: PASS #  maxULP 2.000000e+00 at x=+1.429018e-01  avgULP 4.791000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
-V6: PASS #  maxULP 2.000000e+00 at x=+2.744524e-01  avgULP 4.475000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
-V6: PASS #  maxULP 2.000000e+00 at x=+5.001500e-01  avgULP 4.609000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
-V6: PASS #  maxULP 2.000000e+00 at x=+1.046405e+00  avgULP 4.559000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
-V6: PASS #  maxULP 2.000000e+00 at x=+2.024402e+00  avgULP 4.558000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
-V6: PASS #  maxULP 2.000000e+00 at x=+4.113611e+00  avgULP 4.573000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
-V6: PASS #  maxULP 2.000000e+00 at x=+8.402440e+00  avgULP 4.627000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
-V6: PASS #  maxULP 2.000000e+00 at x=+1.639204e+01  avgULP 4.547000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
-V6: PASS #  maxULP 2.000000e+00 at x=+3.212721e+01  avgULP 4.683978e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
+Latency: 56.30 cpe
+V6: PASS #  maxULP 2.000000e+00 at x=-3.562406e+01  avgULP 7.780000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
+V6: PASS #  maxULP 2.000000e+00 at x=-3.499300e+01  avgULP 3.606000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
+V6: PASS #  maxULP 2.000000e+00 at x=-3.104630e+01  avgULP 3.637000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
+V6: PASS #  maxULP 2.000000e+00 at x=-1.571437e+01  avgULP 3.618000e-01  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
+V6: PASS #  maxULP 2.000000e+00 at x=-7.866786e+00  avgULP 3.580000e-01  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
+V6: PASS #  maxULP 2.000000e+00 at x=-3.983398e+00  avgULP 3.686000e-01  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
+V6: PASS #  maxULP 2.000000e+00 at x=-1.909291e+00  avgULP 3.568000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
+V6: PASS #  maxULP 2.000000e+00 at x=-9.636964e-01  avgULP 3.629000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
+V6: PASS #  maxULP 2.000000e+00 at x=-4.602210e-01  avgULP 3.671000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
+V6: PASS #  maxULP 2.000000e+00 at x=-1.596035e-01  avgULP 3.455000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
+V6: PASS #  maxULP 2.000000e+00 at x=-1.034603e-01  avgULP 3.801000e-01  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
+V6: PASS #  maxULP 2.000000e+00 at x=+2.859036e-02  avgULP 3.434000e-01  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
+V6: PASS #  maxULP 2.000000e+00 at x=+1.423642e-01  avgULP 3.601000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
+V6: PASS #  maxULP 2.000000e+00 at x=+2.501000e-01  avgULP 3.566000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
+V6: PASS #  maxULP 2.000000e+00 at x=+5.001500e-01  avgULP 3.602000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
+V6: PASS #  maxULP 2.000000e+00 at x=+1.073607e+00  avgULP 3.535000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
+V6: PASS #  maxULP 2.000000e+00 at x=+2.024402e+00  avgULP 3.667000e-01  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
+V6: PASS #  maxULP 2.000000e+00 at x=+4.055205e+00  avgULP 3.642000e-01  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
+V6: PASS #  maxULP 2.000000e+00 at x=+8.364037e+00  avgULP 3.504000e-01  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
+V6: PASS #  maxULP 2.000000e+00 at x=+1.652965e+01  avgULP 3.666000e-01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
+V6: PASS #  maxULP 2.000000e+00 at x=+3.246965e+01  avgULP 3.715091e-01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
 V6: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V7 =====
@@ -199,7 +199,7 @@ V7: FAIL #  maxULP +8.373405e+06  avgULP +1.631252e+05  [+3.200000e+01 .. +4.000
 V7: FAIL ** SUMMARY ** failed ranges: 1 / 21
 
 ===== Accuracy report for LIBC =====
-Latency: 17.77 cpe
+Latency: 13.98 cpe
 LIBC: FAIL #  maxULP 8.100000e+01 at x=-3.733873e+01  avgULP 5.401100e+00  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 LIBC: FAIL #  maxULP 7.900000e+01 at x=-3.492799e+01  avgULP 2.162420e+01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 LIBC: FAIL #  maxULP 7.700000e+01 at x=-3.191199e+01  avgULP 1.605120e+01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -224,7 +224,7 @@ LIBC: FAIL #  maxULP 8.100000e+01 at x=+3.551795e+01  avgULP 2.517467e+01  [+3.2
 LIBC: FAIL ** SUMMARY ** failed ranges: 13 / 21
 
 ===== Accuracy report for powf =====
-Latency: 50.65 cpe
+Latency: 38.85 cpe
 powf: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 2.000000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 powf: PASS #  maxULP 1.000000e+00 at x=-2.642714e+01  avgULP 1.000000e-04  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 powf: PASS #  maxULP 1.000000e+00 at x=-2.818522e+01  avgULP 3.000000e-04  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2

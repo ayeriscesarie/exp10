@@ -33,7 +33,7 @@ row_result_t measure_scalar_row(scalar_fn_t fn, int accuracy_samples, int bench_
                 double ref = (double)powl(10.0L, (long double)x);
 
                 double ulp = ulp_error_float(ref, my);
-                double abs_ulp = fabs(ulp);
+                double abs_ulp = my_fabs(ulp);
 
                 if (!isfinite(abs_ulp))
                     continue;
@@ -63,7 +63,7 @@ row_result_t measure_scalar_row(scalar_fn_t fn, int accuracy_samples, int bench_
                 double ref = (double)powl(10.0L, (long double)x);
 
                 double ulp = ulp_error_float(ref, my);
-                double abs_ulp = fabs(ulp);
+                double abs_ulp = my_fabs(ulp);
 
                 if (!isfinite(abs_ulp))
                     continue;
@@ -92,7 +92,7 @@ row_result_t measure_scalar_row(scalar_fn_t fn, int accuracy_samples, int bench_
                 float my = fn((float)x);
                 double ref = (double)powl(10.0L, (long double)x);
                 double ulp = ulp_error_float(ref, my);
-                double abs_ulp = fabs(ulp);
+                double abs_ulp = my_fabs(ulp);
 
                 if (!isfinite(abs_ulp))
                     continue;
@@ -258,7 +258,8 @@ void print_header(void) {
     printf("\n");
     printf("---------------------------------------------------------------------------------------------------------------\n");
     printf("| %-7s | %-54s | %-12s | %-12s | %-22s |\n",
-           "version", "optimizations made", "throughput", "latency", "accuracy");
+           "version", "optimizations" 
+           "made", "throughput", "latency", "accuracy");
     printf("---------------------------------------------------------------------------------------------------------------\n");
 }
 

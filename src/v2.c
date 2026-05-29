@@ -4,24 +4,21 @@
 
 __attribute__((noinline))
 float exp10_v2(float x) {
-    if (isnan(x)) return NAN;
-    if (isinf(x)) return x > 0 ? INFINITY : 0.0f;
+    if (my_isnanf(x)) return NAN;
+    if (my_isinff(x)) return x > 0 ? INFINITY : 0.0f;
 
 
-double xd = (double)x;
+float y =
+    x * LOG2_10_HI +
+    x * LOG2_10_LO;
 
-double y =
-    fma(xd, D_LOG2_10_HI,
-            xd * D_LOG2_10_LO);
-
-double dn =
-    nearbyint(y);
-
-double r_d =
-    y - dn;
+float dn =
+    (float)((int32_t)
+    (y > 0.0f ? y + 0.5f : y - 0.5f));
 
 float r =
-    (float)r_d;
+    fmaf(x, LOG2_10_HI, -dn)
+    + x * LOG2_10_LO;
 
 int32_t n =
     (int32_t)dn;
@@ -33,15 +30,10 @@ poly = fmaf(poly, r, M5_C1);
 poly = fmaf(poly, r, M5_C0);
 
 float result =
-    ldexpf((float)poly, (int32_t)n);
+    my_ldexpf((float)poly, (int32_t)n);
 if (x > X_MAX_FLOAT)
     return INFINITY;
 
-if (x < X_MIN_FLOAT)
-    return 0.0f;
-
-if (x < X_MIN_NORMAL)
-    return powf(10.0f, x);
 return result;
 
 }
