@@ -6,10 +6,7 @@ set(CMAKE_C_STANDARD 11)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -march=native -mfma -mavx2")
 
-include_directories(
-    include
-    "$ENV{MKLROOT}/include"
-)
+include_directories(include)
 
 set(SOURCES
     src/main.c
@@ -24,11 +21,11 @@ set(SOURCES
     src/v5.c
     src/v6.c
     src/v7_avx2.c
+    src/v5_avx.c
+    src/v4_avx.c
+    src/v3_avx.c
 )
 
 add_executable(lab ${SOURCES})
 
-target_link_libraries(lab
-    m
-    "$ENV{MKLROOT}/lib/mkl_rt.lib"
-)
+target_link_libraries(lab m)

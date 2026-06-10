@@ -23,7 +23,6 @@ static float libc_exp10f_wrapper(float x)
     float out[1];
 
     vsExp10(1, in, out);
-
     return out[0];
 }*/
 static float powf_wrapper(float x)
@@ -49,6 +48,7 @@ int main(void) {
         {"V6", "table of 2^(i/32) + tiny residual poly", exp10_v6},
         {"LIBC", "libc expf(x * ln10)", libc_exp10f_wrapper},
         {"powf", "powf(10,x)", powf_wrapper},
+        
      //  {"MKL", "Intel oneMKL vsExp10", mkl_exp10f_wrapper},
     };
 
@@ -80,13 +80,39 @@ int main(void) {
         print_row(rows[i].version, rows[i].optimization, &rr, 1, 0);
         fflush(stdout);
     }
-
+    
+  
 #if defined(__AVX2__) && defined(__FMA__)
-    {
-        row_result_t rr = measure_v7_avx2(200, REPEATS);
-        print_row("V7", "AVX2 vector kernel (throughput-oriented)", &rr, 0, 1);
-        fflush(stdout);
-    }
+{
+    row_result_t rr = measure_v7_avx2(200, REPEATS);
+
+    print_row(
+        "V7",
+        "AVX2 vector kernel (throughput-oriented)",
+        &rr,
+        0,
+        1
+    );
+
+    fflush(stdout);
+}
+
+{
+    row_result_t rr = measure_v5_avx2(200, REPEATS);
+
+    print_row(
+        "V5_AVX",
+        "AVX2 vectorized V5",
+        &rr,
+        0,
+        1
+    );
+
+    fflush(stdout);
+
+    
+}
+    
 #else
     {
         row_result_t rr;

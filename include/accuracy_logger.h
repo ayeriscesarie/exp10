@@ -10,5 +10,14 @@ void write_accuracy_report_for_version(
     int samples_per_range,
     double max_allowed_ulp
 );
+void write_v4_accuracy_report(
+    FILE *file,
+    int samples_per_range,
+    double max_allowed_ulp);
 
+void write_v3_accuracy_report(
+    FILE *file,
+    int samples_per_range,
+    double max_allowed_ulp
+);
 #endif

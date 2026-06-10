@@ -27,6 +27,7 @@ row_result_t measure_scalar_row(
 
 #if defined(__AVX2__) && defined(__FMA__)
 row_result_t measure_v7_avx2(int bench_n, int repeats);
+row_result_t measure_v5_avx2(int bench_n, int repeats);
 #endif
 
 void print_header(void);
@@ -40,5 +41,7 @@ void print_row(
 );
 
 void print_footer(void);
-
+row_result_t measure_v4_avx2(
+    int bench_n,
+    int repeats);
 #endif

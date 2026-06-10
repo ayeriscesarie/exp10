@@ -186,6 +186,140 @@ row_result_t measure_scalar_row(scalar_fn_t fn, int accuracy_samples, int bench_
     return rr;
 }
 
+row_result_t measure_v5_avx2(int bench_n, int repeats) {
+    row_result_t rr;
+    memset(&rr, 0, sizeof(rr));
+
+    enum { N = 1 << 15 };
+    static float in[N];
+    static float out[N];
+
+    for (int i = 0; i < N; ++i) {
+        float t = (float)i / (float)(N - 1);
+        in[i] = -5.0f + 10.0f * t;
+    }
+
+    /* accuracy: compare AVX2 output to scalar V5 */
+    {
+        exp10_v5_avx2_kernel(in, out, N);
+
+        double max_abs_ulp = 0.0;
+        double sum_abs_ulp = 0.0;
+        unsigned valid = 0;
+
+        for (int i = 0; i < N; ++i) {
+            double ref = (double)powl(10.0L, (long double)in[i]);
+            double ulp = ulp_error_float(ref, out[i]);
+
+            sum_abs_ulp += ulp;
+            valid++;
+
+            if (ulp > max_abs_ulp) {
+                max_abs_ulp = ulp;
+            }
+        }
+
+        rr.max_abs_ulp = max_abs_ulp;
+        rr.avg_abs_ulp = (valid > 0) ? (sum_abs_ulp / (double)valid) : 0.0;
+        rr.worst_x = 0.0f;
+    }
+
+    /* throughput only */
+    {
+        double best = 1e100;
+
+        for (int warm = 0; warm < 50; ++warm) {
+            exp10_v5_avx2_kernel(in, out, N);
+        }
+
+        for (int rep = 0; rep < repeats; ++rep) {
+            uint64_t t0 = start_tsc();
+
+            for (int k = 0; k < bench_n; ++k) {
+                exp10_v5_avx2_kernel(in, out, N);
+            }
+
+            uint64_t t1 = stop_tsc();
+
+            double total_elems = (double)bench_n * (double)N;
+            double cpe = (double)(t1 - t0) / total_elems;
+            if (cpe < best) best = cpe;
+        }
+
+        rr.throughput_cpe = best;
+        rr.latency_cpe = 0.0;
+    }
+
+    return rr;
+}
+
+
+row_result_t measure_v4_avx2(int bench_n, int repeats) {
+    row_result_t rr;
+    memset(&rr, 0, sizeof(rr));
+
+    enum { N = 1 << 15 };
+    static float in[N];
+    static float out[N];
+
+    for (int i = 0; i < N; ++i) {
+        float t = (float)i / (float)(N - 1);
+        in[i] = -5.0f + 10.0f * t;
+    }
+
+    /* accuracy: compare AVX2 output to scalar V5 */
+    {
+        exp10_v4_avx2_kernel(in, out, N);
+
+        double max_abs_ulp = 0.0;
+        double sum_abs_ulp = 0.0;
+        unsigned valid = 0;
+
+        for (int i = 0; i < N; ++i) {
+            double ref = (double)powl(10.0L, (long double)in[i]);
+            double ulp = ulp_error_float(ref, out[i]);
+
+            sum_abs_ulp += ulp;
+            valid++;
+
+            if (ulp > max_abs_ulp) {
+                max_abs_ulp = ulp;
+            }
+        }
+
+        rr.max_abs_ulp = max_abs_ulp;
+        rr.avg_abs_ulp = (valid > 0) ? (sum_abs_ulp / (double)valid) : 0.0;
+        rr.worst_x = 0.0f;
+    }
+
+    /* throughput only */
+    {
+        double best = 1e100;
+
+        for (int warm = 0; warm < 50; ++warm) {
+            exp10_v4_avx2_kernel(in, out, N);
+        }
+
+        for (int rep = 0; rep < repeats; ++rep) {
+            uint64_t t0 = start_tsc();
+
+            for (int k = 0; k < bench_n; ++k) {
+                exp10_v4_avx2_kernel(in, out, N);
+            }
+
+            uint64_t t1 = stop_tsc();
+
+            double total_elems = (double)bench_n * (double)N;
+            double cpe = (double)(t1 - t0) / total_elems;
+            if (cpe < best) best = cpe;
+        }
+
+        rr.throughput_cpe = best;
+        rr.latency_cpe = 0.0;
+    }
+
+    return rr;
+}
 
 row_result_t measure_v7_avx2(int bench_n, int repeats) {
     row_result_t rr;
