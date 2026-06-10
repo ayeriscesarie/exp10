@@ -450,6 +450,7 @@ exp10_v5_avx2_kernel(in, out, 8);
                     ulp_error_float(ref, my);
 
                 double abs_ulp = fabs(ulp);
+                if (abs_ulp > 1000.0)
 
                 if (abs_ulp > max_abs_ulp) {
                     max_abs_ulp = abs_ulp;
@@ -490,6 +491,7 @@ exp10_v5_avx2_kernel(in, out, 8);
 
             r.name
         );
+        
     }
 
     fprintf(
@@ -843,7 +845,7 @@ double latency_cpe =
         fail_count,
         range_count
     );
-    printf("version_name = [%s]\n", version_name);
+
 fflush(stdout);
 if (strcmp(version_name, "V6") == 0) {
     write_v7_accuracy_report(
@@ -861,7 +863,6 @@ if (strcmp(version_name, "V3") == 0)
     );
 }
 if (strcmp(version_name, "V5") == 0) {
-    printf("CALLING V5_AVX REPORT\n");
 fflush(stdout);
     write_v5_accuracy_report(
         file,

@@ -87,47 +87,94 @@ r =
         poly =
             _mm256_fmadd_ps(poly, r, c0);
 
-        __m256i exp_bits =
-            _mm256_slli_epi32(
-                _mm256_add_epi32(
-                    n,
-                    bias),
-                23);
+__m256 result;
 
-        __m256 scale =
-            _mm256_castsi256_ps(exp_bits);
+/* normal: -126 <= n <= 127 */
 
-        __m256 result =
-            _mm256_mul_ps(poly, scale);
-__m256i min_exp =
-    _mm256_set1_epi32(-126);
-
-__m256i max_exp =
-    _mm256_set1_epi32(127);
-
-__m256 under =
-    _mm256_castsi256_ps(
-        _mm256_cmpgt_epi32(
-            min_exp,
-            n));
-
-__m256 over =
-    _mm256_castsi256_ps(
+__m256i normal_mask =
+    _mm256_and_si256(
         _mm256_cmpgt_epi32(
             n,
-            max_exp));
+            _mm256_set1_epi32(-127)),
+        _mm256_cmpgt_epi32(
+            _mm256_set1_epi32(128),
+            n));
+
+__m256i exp_bits =
+    _mm256_slli_epi32(
+        _mm256_add_epi32(
+            n,
+            bias),
+        23);
+
+__m256 normal_scale =
+    _mm256_castsi256_ps(exp_bits);
+
+result =
+    _mm256_mul_ps(
+        poly,
+        normal_scale);
+
+/* subnormal: -149 <= n < -126 */
+
+__m256i sub_mask =
+    _mm256_and_si256(
+        _mm256_cmpgt_epi32(
+            n,
+            _mm256_set1_epi32(-150)),
+        _mm256_cmpgt_epi32(
+            _mm256_set1_epi32(-126),
+            n));
+
+__m256i sub_shift =
+    _mm256_add_epi32(
+        n,
+        _mm256_set1_epi32(149));
+
+__m256i sub_bits =
+    _mm256_sllv_epi32(
+        _mm256_set1_epi32(1),
+        sub_shift);
+
+__m256 sub_scale =
+    _mm256_castsi256_ps(sub_bits);
+
+__m256 sub_result =
+    _mm256_mul_ps(
+        poly,
+        sub_scale);
+
+result =
+    _mm256_blendv_ps(
+        result,
+        sub_result,
+        _mm256_castsi256_ps(sub_mask));
+
+/* underflow: n < -149 */
+
+__m256i under_mask =
+    _mm256_cmpgt_epi32(
+        _mm256_set1_epi32(-149),
+        n);
 
 result =
     _mm256_blendv_ps(
         result,
         _mm256_setzero_ps(),
-        under);
+        _mm256_castsi256_ps(under_mask));
+
+/* overflow: n > 127 */
+
+__m256i over_mask =
+    _mm256_cmpgt_epi32(
+        n,
+        _mm256_set1_epi32(127));
 
 result =
     _mm256_blendv_ps(
         result,
         _mm256_set1_ps(INFINITY),
-        over);
+        _mm256_castsi256_ps(over_mask));
         _mm256_storeu_ps(
             out + i,
             result);

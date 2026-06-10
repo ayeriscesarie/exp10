@@ -97,9 +97,14 @@ void exp10_v7_avx2_kernel(
                 n_arr[0]
             );
 
-        ni = _mm256_max_epi32(ni, min_n);
-        ni = _mm256_min_epi32(ni, max_n);
+__m256i ni_clamped =
+    _mm256_max_epi32(ni, min_n);
 
+ni_clamped =
+    _mm256_min_epi32(
+        ni_clamped,
+        max_n
+    );
         __m256i ei =
             _mm256_add_epi32(
                 ni,
