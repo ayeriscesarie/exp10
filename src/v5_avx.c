@@ -64,13 +64,18 @@ __m256 dn =
     static int dbg = 0;
 
 
-        __m256 r =
-            _mm256_add_ps(
-                _mm256_fnmadd_ps(
-                    dn,
-                    _mm256_set1_ps(1.0f),
-                    _mm256_mul_ps(x, log2_hi)),
-                _mm256_mul_ps(x, log2_lo));
+__m256 r =
+    _mm256_fmadd_ps(
+        x,
+        log2_hi,
+        _mm256_sub_ps(
+            _mm256_setzero_ps(),
+            dn));
+
+r =
+    _mm256_add_ps(
+        r,
+        _mm256_mul_ps(x, log2_lo));
 
         __m256 poly =
             _mm256_fmadd_ps(c7, r, c6);
