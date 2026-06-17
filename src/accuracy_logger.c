@@ -1,6 +1,8 @@
 #include "accuracy_logger.h"
 #include "common.h"
 #include "exp10_versions.h"
+#include "bench.h"
+
 
 #include <stdio.h>
 #include <math.h>
@@ -66,6 +68,16 @@ void exp10_v5_avx2_kernel(
 
     fprintf(file, "\n");
     fprintf(file, "===== Accuracy report for V3_avx =====\n");
+    row_result_t rr =
+    measure_v3_avx2(200, 7);
+
+fprintf(
+    file,
+    "Throughput: %.2f elements/cycle\n",
+    rr.throughput_cpe
+);
+
+fprintf(file, "\n");
 
     for (int i = 0; i < range_count; ++i) {
 
@@ -181,6 +193,172 @@ exp10_v3_avx2_kernel(in, out, 8);
     );
 }
 
+void write_sleef_accuracy_report(
+    FILE *file,
+    int samples_per_range,
+    double max_allowed_ulp
+)
+
+    {typedef struct {
+        float left;
+        float right;
+        const char *name;
+    } range_t;
+
+    static const range_t ranges[] = {
+        {-50.0f, -35.0f, "dataset 0.1.0"},
+        {-35.0f, -25.0f, "dataset 0.1.1"},
+        {-32.0f, -16.0f, "dataset 0.1.2"},
+        {-16.0f,  -8.0f, "dataset 0.1.3"},
+        { -8.0f,  -4.0f, "dataset 0.1.4"},
+        { -4.0f,  -2.0f, "dataset 0.1.5"},
+        { -2.0f,  -1.0f, "dataset 0.1.6"},
+        { -1.0f,  -0.5f, "dataset 0.1.7"},
+        { -0.5f,  -0.25f, "dataset 0.1.8"},
+        { -0.25f, -0.125f, "dataset 0.1.9"},
+        { -0.125f, 0.0f, "dataset 0.1.10"},
+        { 0.0f,    0.125f, "dataset 0.1.11"},
+        { 0.125f,  0.25f, "dataset 0.1.12"},
+        { 0.25f,   0.5f, "dataset 0.1.13"},
+        { 0.5f,    1.0f, "dataset 0.1.14"},
+        { 1.0f,    2.0f, "dataset 0.1.15"},
+        { 2.0f,    4.0f, "dataset 0.1.16"},
+        { 4.0f,    8.0f, "dataset 0.1.17"},
+        { 8.0f,   16.0f, "dataset 0.1.18"},
+        {16.0f,   32.0f, "dataset 0.1.19"},
+        {32.0f,   40.0f, "dataset 0.1.20"},
+    };
+
+    int fail_count = 0;
+    int range_count =
+        (int)(sizeof(ranges) / sizeof(ranges[0]));
+
+    fprintf(file, "\n");
+    fprintf(file, "===== Accuracy report for SLEEF =====\n");
+row_result_t rr =
+    measure_sleef_avx2(200, 7);
+
+fprintf(
+    file,
+    "Throughput: %.2f elements/cycle\n",
+    rr.throughput_cpe
+);
+
+fprintf(file, "\n");
+
+    for (int i = 0; i < range_count; ++i) {
+
+        range_t r = ranges[i];
+
+        double max_abs_ulp = 0.0;
+        double sum_abs_ulp = 0.0;
+
+
+        float worst_x = r.left;
+
+        int valid = 0;
+
+        float in[8];
+        float out[8];
+
+        for (int k = 0; k < samples_per_range; k += 8) {
+
+            for (int j = 0; j < 8; ++j) {
+
+                int idx = k + j;
+
+                if (idx >= samples_per_range)
+                    break;
+
+                float t =
+                    (float)idx /
+                    (float)(samples_per_range - 1);
+
+                float x =
+                    r.left +
+                    (r.right - r.left) * t;
+
+                in[j] = x;
+            }
+exp10_sleef_avx2_kernel(in, out, 8);
+
+
+            for (int j = 0; j < 8; ++j) {
+
+                int idx = k + j;
+
+                if (idx >= samples_per_range)
+                    break;
+
+                float x = in[j];
+
+                double ref =
+                    powl(10.0L, (long double)x);
+
+                float my = out[j];
+
+                if (!isfinite(ref) || !isfinite(my)) {
+                    continue;
+                }
+
+                double ulp =
+                    ulp_error_float(ref, my);
+
+                double abs_ulp = fabs(ulp);
+
+                if (abs_ulp > max_abs_ulp) {
+                    max_abs_ulp = abs_ulp;
+                    worst_x = x;
+                }
+
+                sum_abs_ulp += abs_ulp;
+                valid++;
+            }
+        }
+
+        double avg_abs_ulp =
+            valid > 0
+            ? sum_abs_ulp / valid
+            : 0.0;
+
+        const char *status =
+            max_abs_ulp <= max_allowed_ulp
+            ? "PASS"
+            : "FAIL";
+
+        if (status[0] == 'F') {
+            fail_count++;
+        }
+
+        fprintf(
+            file,
+            "SLEEF: %-4s #  maxULP %+.6e  avgULP %+.6e  "
+            "[%+.6e .. %+.6e] : %s\n",
+
+            status,
+
+            max_abs_ulp,
+            avg_abs_ulp,
+
+            r.left,
+            r.right,
+
+            r.name
+        );
+    }
+
+    fprintf(
+        file,
+        "SLEEF avx: %s ** SUMMARY ** failed ranges: %d / %d\n",
+
+        fail_count == 0
+            ? "PASS"
+            : "FAIL",
+
+        fail_count,
+        range_count
+    );
+}
 
 
  void write_v4_accuracy_report(
@@ -225,6 +403,16 @@ exp10_v3_avx2_kernel(in, out, 8);
 
     fprintf(file, "\n");
     fprintf(file, "===== Accuracy report for V4_avx =====\n");
+row_result_t rr =
+    measure_v4_avx2(200, 7);
+
+fprintf(
+    file,
+    "Throughput: %.2f elements/cycle\n",
+    rr.throughput_cpe
+);
+
+fprintf(file, "\n");
 
     for (int i = 0; i < range_count; ++i) {
 
@@ -390,7 +578,16 @@ void exp10_v5_avx2_kernel(
 
     fprintf(file, "\n");
     fprintf(file, "===== Accuracy report for V5_avx =====\n");
+row_result_t rr =
+    measure_v5_avx2(200, 7);
 
+fprintf(
+    file,
+    "Throughput: %.2f elements/cycle\n",
+    rr.throughput_cpe
+);
+
+fprintf(file, "\n");
     for (int i = 0; i < range_count; ++i) {
 
         range_t r = ranges[i];
@@ -551,6 +748,16 @@ static void write_v7_accuracy_report(
 
     fprintf(file, "\n");
     fprintf(file, "===== Accuracy report for V7 =====\n");
+    row_result_t rr =
+    measure_v7_avx2(200, 7);
+
+fprintf(
+    file,
+    "Throughput: %.2f elements/cycle\n",
+    rr.throughput_cpe
+);
+
+fprintf(file, "\n");
 
     for (int i = 0; i < range_count; ++i) {
 
@@ -870,6 +1077,13 @@ fflush(stdout);
         max_allowed_ulp
     );
     
+}
+if (strcmp(version_name, "V5") == 0) {
+    write_sleef_accuracy_report(
+        file,
+        samples_per_range,
+        max_allowed_ulp
+    );
 }
 
 if (strcmp(version_name, "V4") == 0)

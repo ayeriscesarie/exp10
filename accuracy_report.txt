@@ -1,6 +1,6 @@
 
 ===== Accuracy report for V0 =====
-Latency: 37.24 cpe
+Latency: 65.73 cpe
 V0: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 4.080000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V0: PASS #  maxULP 1.000000e+00 at x=-3.499100e+01  avgULP 7.040000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V0: PASS #  maxULP 1.000000e+00 at x=-3.196320e+01  avgULP 7.160000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -25,7 +25,7 @@ V0: PASS #  maxULP 1.000000e+00 at x=+3.203120e+01  avgULP 6.958375e-02  [+3.200
 V0: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V1 =====
-Latency: 26.46 cpe
+Latency: 36.54 cpe
 V1: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 3.080000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V1: PASS #  maxULP 1.000000e+00 at x=-3.499100e+01  avgULP 7.040000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V1: PASS #  maxULP 1.000000e+00 at x=-3.196320e+01  avgULP 7.160000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -50,7 +50,7 @@ V1: PASS #  maxULP 1.000000e+00 at x=+3.203120e+01  avgULP 6.958375e-02  [+3.200
 V1: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V2 =====
-Latency: 28.20 cpe
+Latency: 33.96 cpe
 V2: PASS #  maxULP 4.000000e+00 at x=-3.597210e+01  avgULP 1.624000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V2: PASS #  maxULP 3.000000e+00 at x=-3.476798e+01  avgULP 6.993000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V2: PASS #  maxULP 4.000000e+00 at x=-3.055346e+01  avgULP 7.015000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -75,7 +75,7 @@ V2: PASS #  maxULP 4.000000e+00 at x=+3.236164e+01  avgULP 6.713892e-01  [+3.200
 V2: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V3 =====
-Latency: 21.81 cpe
+Latency: 38.86 cpe
 V3: PASS #  maxULP 4.000000e+00 at x=-3.506901e+01  avgULP 1.705000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V3: PASS #  maxULP 4.000000e+00 at x=-3.446695e+01  avgULP 7.541000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V3: PASS #  maxULP 4.000000e+00 at x=-3.145595e+01  avgULP 7.512000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -100,6 +100,8 @@ V3: PASS #  maxULP 4.000000e+00 at x=+3.206081e+01  avgULP 7.237964e-01  [+3.200
 V3: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V3_avx =====
+Throughput: 2.90 elements/cycle
+
 V3_avx: PASS #  maxULP +4.000000e+00  avgULP +1.705000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V3_avx: PASS #  maxULP +4.000000e+00  avgULP +7.541000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V3_avx: PASS #  maxULP +4.000000e+00  avgULP +7.512000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -124,7 +126,7 @@ V3_avx: PASS #  maxULP +4.000000e+00  avgULP +7.237964e-01  [+3.200000e+01 .. +4
 V3_avx: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V4 =====
-Latency: 30.02 cpe
+Latency: 46.79 cpe
 V4: PASS #  maxULP 4.000000e+00 at x=-3.597210e+01  avgULP 1.624000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V4: PASS #  maxULP 3.000000e+00 at x=-3.476798e+01  avgULP 6.993000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V4: PASS #  maxULP 4.000000e+00 at x=-3.055346e+01  avgULP 7.015000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -149,6 +151,8 @@ V4: PASS #  maxULP 4.000000e+00 at x=+3.236164e+01  avgULP 6.713892e-01  [+3.200
 V4: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V4_avx =====
+Throughput: 2.71 elements/cycle
+
 V4_avx: PASS #  maxULP +4.000000e+00  avgULP +1.624000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V4_avx: PASS #  maxULP +3.000000e+00  avgULP +6.993000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V4_avx: PASS #  maxULP +4.000000e+00  avgULP +7.015000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -173,7 +177,7 @@ V4_avx: PASS #  maxULP +4.000000e+00  avgULP +6.713892e-01  [+3.200000e+01 .. +4
 V4_avx: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V5 =====
-Latency: 21.06 cpe
+Latency: 45.78 cpe
 V5: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 3.120000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V5: PASS #  maxULP 1.000000e+00 at x=-3.499100e+01  avgULP 7.190000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V5: PASS #  maxULP 1.000000e+00 at x=-3.196320e+01  avgULP 7.370000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -198,6 +202,8 @@ V5: PASS #  maxULP 1.000000e+00 at x=+3.203120e+01  avgULP 7.184052e-02  [+3.200
 V5: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V5_avx =====
+Throughput: 2.93 elements/cycle
+
 V5_avx: PASS #  maxULP +0.000000e+00  avgULP +3.120000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V5_avx: PASS #  maxULP +0.000000e+00  avgULP +7.190000e-02  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V5_avx: PASS #  maxULP +0.000000e+00  avgULP +7.370000e-02  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -221,8 +227,34 @@ V5_avx: PASS #  maxULP +0.000000e+00  avgULP +7.350000e-02  [+1.600000e+01 .. +3
 V5_avx: PASS #  maxULP +0.000000e+00  avgULP +7.184052e-02  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
 V5_avx: PASS ** SUMMARY ** failed ranges: 0 / 21
 
+===== Accuracy report for SLEEF =====
+Throughput: 2.81 elements/cycle
+
+SLEEF: FAIL #  maxULP +4.400000e+01  avgULP +3.509000e+00  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
+SLEEF: FAIL #  maxULP +4.400000e+01  avgULP +1.607580e+01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
+SLEEF: FAIL #  maxULP +4.400000e+01  avgULP +1.438450e+01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
+SLEEF: FAIL #  maxULP +2.200000e+01  avgULP +7.179200e+00  [-1.600000e+01 .. -8.000000e+00] : dataset 0.1.3
+SLEEF: FAIL #  maxULP +1.100000e+01  avgULP +3.606700e+00  [-8.000000e+00 .. -4.000000e+00] : dataset 0.1.4
+SLEEF: FAIL #  maxULP +6.000000e+00  avgULP +1.807800e+00  [-4.000000e+00 .. -2.000000e+00] : dataset 0.1.5
+SLEEF: PASS #  maxULP +3.000000e+00  avgULP +9.180000e-01  [-2.000000e+00 .. -1.000000e+00] : dataset 0.1.6
+SLEEF: PASS #  maxULP +2.000000e+00  avgULP +4.631000e-01  [-1.000000e+00 .. -5.000000e-01] : dataset 0.1.7
+SLEEF: PASS #  maxULP +1.000000e+00  avgULP +2.509000e-01  [-5.000000e-01 .. -2.500000e-01] : dataset 0.1.8
+SLEEF: PASS #  maxULP +1.000000e+00  avgULP +1.222000e-01  [-2.500000e-01 .. -1.250000e-01] : dataset 0.1.9
+SLEEF: PASS #  maxULP +1.000000e+00  avgULP +6.390000e-02  [-1.250000e-01 .. +0.000000e+00] : dataset 0.1.10
+SLEEF: PASS #  maxULP +1.000000e+00  avgULP +5.580000e-02  [+0.000000e+00 .. +1.250000e-01] : dataset 0.1.11
+SLEEF: PASS #  maxULP +1.000000e+00  avgULP +1.489000e-01  [+1.250000e-01 .. +2.500000e-01] : dataset 0.1.12
+SLEEF: PASS #  maxULP +1.000000e+00  avgULP +2.155000e-01  [+2.500000e-01 .. +5.000000e-01] : dataset 0.1.13
+SLEEF: PASS #  maxULP +2.000000e+00  avgULP +4.474000e-01  [+5.000000e-01 .. +1.000000e+00] : dataset 0.1.14
+SLEEF: PASS #  maxULP +3.000000e+00  avgULP +8.919000e-01  [+1.000000e+00 .. +2.000000e+00] : dataset 0.1.15
+SLEEF: FAIL #  maxULP +6.000000e+00  avgULP +1.791400e+00  [+2.000000e+00 .. +4.000000e+00] : dataset 0.1.16
+SLEEF: FAIL #  maxULP +1.100000e+01  avgULP +3.580300e+00  [+4.000000e+00 .. +8.000000e+00] : dataset 0.1.17
+SLEEF: FAIL #  maxULP +2.200000e+01  avgULP +7.182000e+00  [+8.000000e+00 .. +1.600000e+01] : dataset 0.1.18
+SLEEF: FAIL #  maxULP +4.400000e+01  avgULP +1.434950e+01  [+1.600000e+01 .. +3.200000e+01] : dataset 0.1.19
+SLEEF: FAIL #  maxULP +4.400000e+01  avgULP +1.605169e+01  [+3.200000e+01 .. +4.000000e+01] : dataset 0.1.20
+SLEEF avx: FAIL ** SUMMARY ** failed ranges: 11 / 21
+
 ===== Accuracy report for V6 =====
-Latency: 42.97 cpe
+Latency: 77.52 cpe
 V6: PASS #  maxULP 2.000000e+00 at x=-3.562406e+01  avgULP 7.780000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V6: PASS #  maxULP 2.000000e+00 at x=-3.499300e+01  avgULP 3.606000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V6: PASS #  maxULP 2.000000e+00 at x=-3.104630e+01  avgULP 3.637000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -247,6 +279,8 @@ V6: PASS #  maxULP 2.000000e+00 at x=+3.246965e+01  avgULP 3.715091e-01  [+3.200
 V6: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for V7 =====
+Throughput: 3.69 elements/cycle
+
 V7: PASS #  maxULP +4.000000e+00  avgULP +1.541000e-01  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 V7: PASS #  maxULP +4.000000e+00  avgULP +6.845000e-01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 V7: PASS #  maxULP +4.000000e+00  avgULP +6.894000e-01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -271,7 +305,7 @@ V7: PASS #  maxULP +4.000000e+00  avgULP +6.868104e-01  [+3.200000e+01 .. +4.000
 V7: PASS ** SUMMARY ** failed ranges: 0 / 21
 
 ===== Accuracy report for LIBC =====
-Latency: 14.03 cpe
+Latency: 21.02 cpe
 LIBC: FAIL #  maxULP 8.100000e+01 at x=-3.733873e+01  avgULP 5.401100e+00  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 LIBC: FAIL #  maxULP 7.900000e+01 at x=-3.492799e+01  avgULP 2.162420e+01  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 LIBC: FAIL #  maxULP 7.700000e+01 at x=-3.191199e+01  avgULP 1.605120e+01  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2
@@ -296,7 +330,7 @@ LIBC: FAIL #  maxULP 8.100000e+01 at x=+3.551795e+01  avgULP 2.517467e+01  [+3.2
 LIBC: FAIL ** SUMMARY ** failed ranges: 13 / 21
 
 ===== Accuracy report for powf =====
-Latency: 28.61 cpe
+Latency: 46.19 cpe
 powf: PASS #  maxULP 1.000000e+00 at x=-4.515302e+01  avgULP 2.000000e-02  [-5.000000e+01 .. -3.500000e+01] : dataset 0.1.0
 powf: PASS #  maxULP 1.000000e+00 at x=-2.642714e+01  avgULP 1.000000e-04  [-3.500000e+01 .. -2.500000e+01] : dataset 0.1.1
 powf: PASS #  maxULP 1.000000e+00 at x=-2.818522e+01  avgULP 3.000000e-04  [-3.200000e+01 .. -1.600000e+01] : dataset 0.1.2

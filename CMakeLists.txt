@@ -24,8 +24,13 @@ set(SOURCES
     src/v5_avx.c
     src/v4_avx.c
     src/v3_avx.c
+    src/sleef_avx.c
 )
 
 add_executable(lab ${SOURCES})
 
-target_link_libraries(lab m)
+target_link_libraries(
+    lab
+    m
+    sleef
+)
